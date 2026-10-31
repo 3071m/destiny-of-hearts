@@ -23,7 +23,6 @@ class OtomeGame {
     this.playerName = localStorage.getItem("otome_player_name") || "เรเนีย";
     this.isSkipping = false;
     this.skipInterval = null;
-    this.teatimeState = { prince: "cedric", tea: "rose_tea", dessert: "macaron" };
 
     // Secret letters data
     this.letters = {
@@ -455,13 +454,6 @@ class OtomeGame {
         const modalId = btn.dataset.close;
         const el = document.getElementById(modalId);
         if (el) el.classList.remove('active');
-        if (modalId === 'modal-teatime') {
-          if (this.screens.game && this.screens.game.classList.contains('active')) {
-            this.updateBgmForCurrentScene();
-          } else if (window.audioManager) {
-            window.audioManager.setTheme('title');
-          }
-        }
       });
     });
 
@@ -509,82 +501,6 @@ class OtomeGame {
     }
 
     
-    // Tea Time Mini-game Events
-    const hubTeaBtn = document.getElementById("btn-hub-teatime");
-    if (hubTeaBtn) {
-      hubTeaBtn.addEventListener("click", () => {
-        window.audioManager.playClick();
-        this.openTeaTimeModal();
-      });
-    }
-
-    const lobbyInviteTeaBtn = document.getElementById("btn-lobby-invite-tea");
-    if (lobbyInviteTeaBtn) {
-      lobbyInviteTeaBtn.addEventListener("click", () => {
-        window.audioManager.playClick();
-        const activeTab = document.querySelector('.prince-tab.active');
-        const princeKey = activeTab ? activeTab.dataset.prince : 'cedric';
-        this.openTeaTimeModal(princeKey);
-      });
-    }
-
-    // Prince Selector in Teatime Modal
-    document.querySelectorAll(".teatime-prince-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        window.audioManager.playClick();
-        document.querySelectorAll(".teatime-prince-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        this.selectTeaPrince(btn.dataset.prince);
-      });
-    });
-
-    // Tea Item Selector
-    document.querySelectorAll("#teatime-tea-grid .teatime-item-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        window.audioManager.playClick();
-        document.querySelectorAll("#teatime-tea-grid .teatime-item-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        this.teatimeState.tea = btn.dataset.item;
-      });
-    });
-
-    // Dessert Item Selector
-    document.querySelectorAll("#teatime-dessert-grid .teatime-item-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        window.audioManager.playClick();
-        document.querySelectorAll("#teatime-dessert-grid .teatime-item-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        this.teatimeState.dessert = btn.dataset.item;
-      });
-    });
-
-    // Serve Tea Button
-    const serveTeaBtn = document.getElementById("btn-serve-tea");
-    if (serveTeaBtn) {
-      serveTeaBtn.addEventListener("click", () => {
-        this.serveTeaTime();
-      });
-    }
-
-    // Tea Topics Buttons
-    document.querySelectorAll(".teatime-topic-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        window.audioManager.playClick();
-        this.selectTeaTopic(btn.dataset.topic);
-      });
-    });
-
-    // Reset Teatime Round Button
-    const teatimeAgainBtn = document.getElementById("btn-teatime-again");
-    if (teatimeAgainBtn) {
-      teatimeAgainBtn.addEventListener("click", () => {
-        window.audioManager.playClick();
-        document.getElementById("teatime-topics-section").style.display = "none";
-        document.getElementById("teatime-menu-section").style.display = "block";
-        this.selectTeaPrince(this.teatimeState.prince);
-      });
-    }
-
     // In-game menu actions
     document.getElementById('btn-save-slot').addEventListener('click', () => {
       this.saveProgress();
