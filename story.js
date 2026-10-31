@@ -39,7 +39,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-night",
+    "bg": "bg-bedroom",
     "text": "คืนวันศุกร์หลังจากเหนื่อยมาทั้งสัปดาห์ คุณกลับมานอนพักที่ห้อง",
     "next": "pro_p1_2"
   },
@@ -47,7 +47,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-shrine",
+    "bg": "bg-bedroom",
     "text": "ข้างนอกฝนตกหนักและมีลมพัดแรง",
     "next": "pro_p1_3"
   },
@@ -55,7 +55,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-shrine",
+    "bg": "bg-bedroom",
     "text": "คุณลุกไปชงโกโก้ร้อน แล้วเดินผ่านห้องหนังสือเก่าของคุณยาย",
     "next": "pro_p1_4"
   },
@@ -63,7 +63,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-shrine",
+    "bg": "bg-bedroom",
     "text": "จู่ๆ ก็มีแสงสีทองส่องออกมาจากชั้นหนังสือเก่า",
     "next": "pro_p1_5"
   },
@@ -71,7 +71,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-shrine",
+    "bg": "bg-bedroom",
     "text": "บนชั้นมีสมุดปกหนังสีดำประดับอัญมณีรูปดาววางอยู่",
     "next": "pro_p1_6"
   },
@@ -79,7 +79,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-shrine",
+    "bg": "bg-bedroom",
     "text": "คุณวางแก้วโกโก้ลง แล้วหยิบสมุดเล่มนั้นขึ้นมาดู",
     "next": "pro_p1_7"
   },
@@ -87,7 +87,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-shrine",
+    "bg": "bg-bedroom",
     "text": "หน้าปกเขียนไว้ว่า 'พันธสัญญาหัวใจ: สี่ราชันย์แห่งเอลีเซียม'",
     "next": "pro_p1_8"
   },
@@ -95,7 +95,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-shrine",
+    "bg": "bg-bedroom",
     "text": "'สมุดอะไรกันเนี่ย...' คุณพึมพำพลางแตะลงบนอัญมณีตรงกลางปก",
     "next": "pro_p1_9"
   },
@@ -103,7 +103,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-shrine",
+    "bg": "bg-bedroom",
     "text": "ทันใดนั้น อัญมณีทั้งสี่สีก็เปล่งแสงสว่างจ้าขึ้นมาทันที!",
     "next": "pro_p1_10"
   },
@@ -111,7 +111,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-shrine",
+    "bg": "bg-bedroom",
     "text": "หน้ากระดาษเปิดพลิกเองอย่างรวดเร็ว พร้อมกับมีแสงหมุนวนรอบตัวคุณ",
     "next": "pro_p1_11"
   },
@@ -119,7 +119,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-shrine",
+    "bg": "bg-bedroom",
     "text": "คุณพยายามจะปล่อยมือ แต่วงแหวนแสงกลับดึงตัวคุณเข้าไป!",
     "next": "pro_p1_12"
   },
@@ -127,7 +127,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-shrine",
+    "bg": "bg-bedroom",
     "text": "มีเสียงพูดของชายหนุ่มดังก้องเข้ามาในหัวของคุณ...",
     "next": "pro_p1_13"
   },
@@ -135,7 +135,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-shrine",
+    "bg": "bg-bedroom",
     "text": "'ได้โปรดช่วยพวกเราด้วยเถอะ... ธิดาแห่งแสงดาว...'",
     "next": "pro_p1_14"
   },
@@ -143,7 +143,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-shrine",
+    "bg": "bg-bedroom",
     "text": "ภาพห้องนอนค่อยๆ จางหายไป กลายเป็นอุโมงค์แสงสว่างจ้า",
     "next": "pro_p1_15"
   },
@@ -884,7 +884,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 1: สภาขุนนาง",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-palace",
+    "bg": "bg-council",
     "text": "หลังทานอาหารเสร็จ คุณเดินตามพวกเขาเข้าไปในห้องประชุมสภา",
     "next": "ch1_p1_10"
   },
@@ -892,7 +892,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 1: สภาขุนนาง",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-palace",
+    "bg": "bg-council",
     "text": "มีขุนนางบางกลุ่มเริ่มส่งเสียงคัดค้านและไม่มั่นใจในตัวคุณ",
     "next": "ch1_p1_11"
   },
@@ -900,7 +900,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 1: สภาขุนนาง",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-council",
     "text": "'ท่านดยุกเซดริก! เราจะมั่นใจได้อย่างไรว่าเด็กสาวคนนี้ควบคุมพลังได้จริงๆ!'",
     "next": "ch1_p1_12",
     "charImg": "assets/char_cedric.png"
@@ -940,7 +940,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 1: สภาขุนนาง",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-council",
     "text": "เมื่อมีคนสงสัยในพลังของคุณ คุณจะพิสูจน์ตัวเองอย่างไร?",
     "choices": [
       {
@@ -2534,7 +2534,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-council",
     "text": "ไม่กี่วันต่อมา สภาขุนนางพยายามกดดันให้เซดริกแต่งงานทางการเมืองกับตระกูลอื่น",
     "next": "cedric_ep5_2",
     "charImg": "assets/char_cedric.png"
@@ -2543,7 +2543,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-council",
     "text": "เรื่องนี้กลายเป็นประเด็นที่ทุกคนในวังกำลังจับตามอง",
     "next": "cedric_ep5_sub_1",
     "charImg": "assets/char_cedric.png"
@@ -2601,7 +2601,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 5: ชัยชนะแห่งรักแท้",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-council",
     "text": "เซดริกประกาศกลางสภาอย่างชัดเจนว่า เขาจะไม่แต่งงานกับใครนอกจากคุณ",
     "next": "cedric_ep5_good_1_ext_1",
     "charImg": "assets/char_cedric_blush.png"
@@ -2637,7 +2637,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 5: การปกป้องเพียงลำพัง",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-council",
     "text": "เซดริกจับมือคุณไว้ 'ไม่ต้องกังวลนะ เราจะช่วยกันหาทางออกไปด้วยกัน'",
     "next": "cedric_ep5_bad_1_ext_1",
     "charImg": "assets/char_cedric.png"
@@ -3177,7 +3177,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-lake",
     "text": "เขาจับมือคุณเดินไปที่ทะเลสาบจันทราและลานดูดาว",
     "next": "lucian_ep2_6",
     "charImg": "assets/char_lucian.png"
@@ -3186,7 +3186,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-lake",
     "text": "ที่ทะเลสาบจันทราผิวน้ำสะท้อนแสงแดดระยิบระยับ ลมพัดเย็นสบาย",
     "next": "lucian_ep2_7",
     "charImg": "assets/char_lucian.png"
@@ -4496,7 +4496,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "เขาพาคุณเดินไปที่ลานฝึกอัศวินและสวนดอกไม้ประจำค่าย",
     "next": "leon_ep2_6",
     "charImg": "assets/char_leon.png"
@@ -4505,7 +4505,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "ที่ค่ายอัศวินมีลมพัดเย็นสบาย ดอกทานตะวันบานเต็มลานกว้าง",
     "next": "leon_ep2_7",
     "charImg": "assets/char_leon.png"
@@ -5815,7 +5815,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-rooftop",
     "text": "เขาพาคุณปีนขึ้นไปบนหอนาฬิกาเพื่อดูวิวเมืองหลวงจากมุมสูง",
     "next": "kael_ep2_6",
     "charImg": "assets/char_kael.png"
@@ -5824,7 +5824,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-rooftop",
     "text": "บนยอดหอนาฬิการับลมเย็นสบาย มองเห็นหลังคาบ้านเรือนและท้องฟ้ากว้างใหญ่",
     "next": "kael_ep2_7",
     "charImg": "assets/char_kael.png"
@@ -7350,7 +7350,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-council",
     "text": "เมื่อเดินเข้าห้องประชุม ทุกสายตาต่างจับจ้องมาที่คุณกับเซดริก",
     "next": "cedric_ep5_sub_4",
     "charImg": "assets/char_cedric.png"
@@ -7377,7 +7377,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-council",
     "text": "ไม่มีขุนนางคนไหนกล้าคัดค้านสายตาที่จริงจังของเซดริก",
     "next": "cedric_ep5_sub_7",
     "charImg": "assets/char_cedric.png"
@@ -7395,7 +7395,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-council",
     "text": "คำพูดหนักแน่นของเซดริกทำให้คุณรู้สึกมั่นใจในตัวเขามาก",
     "next": "cedric_ep5_sub_9",
     "charImg": "assets/char_cedric.png"
@@ -7413,7 +7413,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-council",
     "text": "เหล่าขุนนางต่างยอมรับการตัดสินใจของเซดริกในที่สุด",
     "next": "cedric_ep5_3",
     "charImg": "assets/char_cedric.png"
@@ -7674,7 +7674,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-lake",
     "text": "ลูเชียนจับมือคุณก้าวลงเรือ ก่อนที่เรือจะค่อยๆ เคลื่อนออกไปกลางน้ำ",
     "next": "lucian_ep2_sub_4",
     "charImg": "assets/char_lucian.png"
@@ -7692,7 +7692,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-lake",
     "text": "กลีบดอกไม้ลอยมาตามผิวน้ำ ลูเชียนก้มลงช้อนขึ้นมาแล้วยื่นให้คุณ",
     "next": "lucian_ep2_sub_6",
     "charImg": "assets/char_lucian.png"
@@ -7710,7 +7710,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-lake",
     "text": "คุณสบตากับลูเชียนที่มองคุณด้วยรอยยิ้มอบอุ่น",
     "next": "lucian_ep2_sub_8",
     "charImg": "assets/char_lucian.png"
@@ -7728,7 +7728,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-lake",
     "text": "เขาขยับมานั่งข้างๆ คุณบนเรือ แล้วโอบไหล่คุณไว้กันโคลงเคลง",
     "next": "lucian_ep2_sub_10",
     "charImg": "assets/char_lucian.png"
@@ -7746,7 +7746,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-lake",
     "text": "ฝูงปลาตัวเล็กๆ แหวกว่ายอยู่รอบเรืออย่างเพลินตา",
     "next": "lucian_ep2_sub_12",
     "charImg": "assets/char_lucian.png"
@@ -7764,7 +7764,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-lake",
     "text": "คุณหัวเราะเบาๆ กับมุกตลกน่ารักๆ ของลูเชียน",
     "next": "lucian_ep2_sub_14",
     "charImg": "assets/char_lucian_smile.png"
@@ -7782,7 +7782,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-lake",
     "text": "เมื่อเรือเทียบฝั่งเกาะกลางทะเลสาบ ลูเชียนก็จูงมือคุณลงไปเดินเล่น",
     "next": "lucian_ep2_sub_16",
     "charImg": "assets/char_lucian.png"
@@ -7800,7 +7800,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-lake",
     "text": "การได้เดินจับมือกับลูเชียนทำให้คุณรู้สึกผ่อนคลายมาก",
     "next": "lucian_ep2_sub_18",
     "charImg": "assets/char_lucian.png"
@@ -8394,7 +8394,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "ลีออนหยิบดาบไม้มาสอนท่าป้องกันตัวง่ายๆ ให้คุณอย่างตั้งใจ",
     "next": "leon_ep2_sub_8",
     "charImg": "assets/char_leon.png"
@@ -8412,7 +8412,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "เขาจับมือคุณช่วยสอนท่าฟันดาบอย่างใกล้ชิด ทำเอาคุณแอบเขินขึ้นมา",
     "next": "leon_ep2_sub_10",
     "charImg": "assets/char_leon_blush.png"
@@ -8430,7 +8430,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "พอคุณทำตามได้ ลีออนก็ปรบมือเชียร์คุณยกใหญ่",
     "next": "leon_ep2_sub_12",
     "charImg": "assets/char_leon.png"
@@ -8448,7 +8448,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "คุณหัวเราะให้กับความน่ารักและเป็นกันเองของเขา",
     "next": "leon_ep2_sub_14",
     "charImg": "assets/char_leon_smile.png"
@@ -8466,7 +8466,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "หลังจากซ้อมเสร็จ ลีออนก็พาคุณมานั่งพักดื่มน้ำเย็นๆ ใต้ร่มไม้",
     "next": "leon_ep2_sub_16",
     "charImg": "assets/char_leon_blush.png"
@@ -8484,7 +8484,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "ลีออนคอยพัดและดูแลคุณอย่างดีไม่ห่าง",
     "next": "leon_ep2_sub_18",
     "charImg": "assets/char_leon_blush.png"
@@ -9042,7 +9042,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-garden",
+    "bg": "bg-rooftop",
     "text": "คุณก้มมองวิวเมืองหลวงด้านล่าง มีผู้คนเดินขวักไขว่เหมือนมดตัวเล็กๆ",
     "next": "kael_ep2_sub_4",
     "charImg": "assets/char_kael.png"
@@ -9069,7 +9069,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-garden",
+    "bg": "bg-rooftop",
     "text": "เคลชี้ให้คุณดูจุดต่างๆ ในเมืองหลวงอย่างคุ้นเคย",
     "next": "kael_ep2_sub_7",
     "charImg": "assets/char_kael.png"
@@ -9087,7 +9087,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-garden",
+    "bg": "bg-rooftop",
     "text": "คุณทึ่งในความรอบรู้เรื่องตรอกซอกซอยของเขา",
     "next": "kael_ep2_sub_9",
     "charImg": "assets/char_kael.png"
@@ -9105,7 +9105,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-rooftop",
     "text": "ลมพัดแรงขึ้น เคลจึงขยับมายืนบังลมให้คุณทางด้านหลัง",
     "next": "kael_ep2_sub_11",
     "charImg": "assets/char_kael.png"
@@ -9123,7 +9123,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-rooftop",
     "text": "คุณหันไปสบตากับเขาในระยะประชิด ทำเอาทั้งคู่ชะงักไปครู่หนึ่ง",
     "next": "kael_ep2_sub_13",
     "charImg": "assets/char_kael.png"
@@ -9141,7 +9141,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-garden",
+    "bg": "bg-rooftop",
     "text": "เขาเกาท้ายทอยแก้เขินแล้วชวนคุณลงไปหาของกินอร่อยๆ ในตลาด",
     "next": "kael_ep2_sub_15",
     "charImg": "assets/char_kael_smile.png"

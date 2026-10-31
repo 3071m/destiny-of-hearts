@@ -74,6 +74,68 @@ html, body {
   background-position: center !important;
 }
 
+/* Extended Backgrounds with Graceful Fallbacks */
+.bg-bedroom {
+  background-image: linear-gradient(to bottom, rgba(18, 12, 28, 0.35), rgba(10, 6, 18, 0.7)), url('assets/bg_bedroom.jpg'), url('assets/bg_night.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.bg-council {
+  background-image: linear-gradient(to bottom, rgba(20, 14, 26, 0.3), rgba(12, 8, 18, 0.7)), url('assets/bg_council.jpg'), url('assets/bg_palace.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.bg-training {
+  background-image: linear-gradient(to bottom, rgba(24, 18, 14, 0.25), rgba(14, 10, 16, 0.65)), url('assets/bg_training.jpg'), url('assets/bg_garden.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.bg-rooftop {
+  background-image: linear-gradient(to bottom, rgba(14, 10, 24, 0.35), rgba(8, 5, 16, 0.72)), url('assets/bg_rooftop.jpg'), url('assets/bg_night.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.bg-lake {
+  background-image: linear-gradient(to bottom, rgba(10, 16, 30, 0.3), rgba(6, 10, 22, 0.68)), url('assets/bg_lake.jpg'), url('assets/bg_shrine.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.bg-room {
+  background-image: linear-gradient(to bottom, rgba(22, 14, 30, 0.32), rgba(12, 8, 20, 0.68)), url('assets/bg_room.jpg'), url('assets/bg_palace.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.bg-ballroom {
+  background-image: linear-gradient(to bottom, rgba(24, 16, 28, 0.3), rgba(14, 8, 20, 0.68)), url('assets/bg_ballroom.jpg'), url('assets/bg_palace.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.bg-library {
+  background-image: linear-gradient(to bottom, rgba(18, 14, 24, 0.35), rgba(10, 8, 16, 0.7)), url('assets/bg_library.jpg'), url('assets/bg_palace.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.bg-greenhouse {
+  background-image: linear-gradient(to bottom, rgba(12, 20, 22, 0.3), rgba(8, 12, 16, 0.68)), url('assets/bg_greenhouse.jpg'), url('assets/bg_garden.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.bg-battle {
+  background-image: linear-gradient(to bottom, rgba(35, 8, 14, 0.45), rgba(18, 4, 8, 0.78)), url('assets/bg_battle.jpg'), url('assets/bg_night.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+
 .vignette {
   position: absolute;
   inset: 0;
@@ -1766,3 +1828,168 @@ html, body {
 #audio-panel button.off { opacity: 0.45; filter: grayscale(1); }
 
 .character-stage { transition: top 0.25s ease, bottom 0.25s ease; }
+
+/* ============================================================== */
+/* CINEMATIC SCREEN FX & ROMANTIC PARTICLES                      */
+/* ============================================================== */
+
+/* Screen Shake Effect */
+@keyframes screenShake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  15% { transform: translate(-6px, -4px) rotate(-1deg); }
+  30% { transform: translate(6px, 3px) rotate(1deg); }
+  45% { transform: translate(-5px, 5px) rotate(-0.5deg); }
+  60% { transform: translate(5px, -3px) rotate(0.5deg); }
+  75% { transform: translate(-2px, 2px) rotate(0deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.screen-shake {
+  animation: screenShake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both !important;
+}
+
+/* Screen Flash Overlay */
+#screen-flash-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.08s ease;
+}
+
+#screen-flash-overlay.flash-white {
+  background: rgba(255, 255, 255, 0.85);
+  animation: flashFade 0.4s ease-out forwards;
+}
+
+#screen-flash-overlay.flash-gold {
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, rgba(255, 180, 0, 0.4) 70%);
+  animation: flashFade 0.5s ease-out forwards;
+}
+
+#screen-flash-overlay.flash-red {
+  background: radial-gradient(circle, rgba(220, 20, 60, 0.7) 0%, rgba(120, 0, 20, 0.5) 80%);
+  animation: flashFade 0.45s ease-out forwards;
+}
+
+@keyframes flashFade {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Floating Hearts Pop-up */
+.floating-heart-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9990;
+  overflow: hidden;
+}
+
+.floating-heart-burst {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  animation: floatHeartAnim 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: none;
+}
+
+.floating-heart-burst .heart-icon {
+  font-size: 2.4rem;
+  filter: drop-shadow(0 0 12px currentColor);
+}
+
+.floating-heart-burst .heart-text {
+  font-family: 'Kanit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: rgba(15, 10, 25, 0.85);
+  border: 1px solid currentColor;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+@keyframes floatHeartAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.6);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.15);
+  }
+  40% {
+    transform: translateY(-25px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-90px) scale(0.85);
+  }
+}
+
+/* Prince Cutout Bounce */
+@keyframes princeBounce {
+  0%, 100% { transform: scale(1); }
+  40% { transform: scale(1.05) translateY(-8px); }
+  70% { transform: scale(0.98) translateY(2px); }
+}
+
+.prince-cutout-wrap img.tap-bounce {
+  animation: princeBounce 0.5s ease-in-out !important;
+}
+
+/* Skip Button Active Highlight */
+#btn-hud-skip.active {
+  background: linear-gradient(135deg, #e6c27a, #b38728) !important;
+  color: #0c0814 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 0 12px rgba(230, 194, 122, 0.7) !important;
+}
+
+/* Name Edit Button & Modal */
+.btn-subtle-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(230, 194, 122, 0.4);
+  color: #e6c27a;
+  border-radius: 14px;
+  padding: 3px 10px;
+  font-size: 0.78rem;
+  font-family: 'Kanit', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 8px;
+}
+
+.btn-subtle-pill:hover {
+  background: rgba(230, 194, 122, 0.25);
+  border-color: #e6c27a;
+}
+
+.name-input-group {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.name-input-box {
+  flex: 1;
+  background: rgba(20, 15, 30, 0.8);
+  border: 1px solid rgba(230, 194, 122, 0.5);
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.name-input-box:focus {
+  border-color: #e6c27a;
+  box-shadow: 0 0 10px rgba(230, 194, 122, 0.3);
+}

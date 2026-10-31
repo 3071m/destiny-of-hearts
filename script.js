@@ -20,6 +20,9 @@ class OtomeGame {
     this.autoPlay = false;
     this.autoTimeout = null;
     this.winningRoute = null;
+    this.playerName = localStorage.getItem("otome_player_name") || "เรเนีย";
+    this.isSkipping = false;
+    this.skipInterval = null;
 
     // Secret letters data
     this.letters = {
@@ -173,6 +176,7 @@ class OtomeGame {
     document.getElementById('btn-tap-start').addEventListener('click', () => {
       window.audioManager.init();
       window.audioManager.playHeartUp();
+    this.triggerFloatingHeart(characterKey, points);
       this.switchScreen('lobby');
     });
 
@@ -357,6 +361,49 @@ class OtomeGame {
         if (el) el.classList.remove('active');
       });
     });
+
+    
+    // Edit Player Name Events
+    if (this.btnEditPlayerName) {
+      this.btnEditPlayerName.addEventListener('click', () => {
+        window.audioManager.playClick();
+        if (this.inputPlayerName) this.inputPlayerName.value = this.playerName;
+        if (this.modalName) this.modalName.classList.add('active');
+      });
+    }
+
+    if (this.btnSaveName) {
+      this.btnSaveName.addEventListener('click', () => {
+        window.audioManager.playClick();
+        const val = (this.inputPlayerName?.value || '').trim();
+        if (val) {
+          this.playerName = val;
+          localStorage.setItem("otome_player_name", val);
+          this.updatePlayerNameDisplay();
+          this.showToast(`✨ บันทึกชื่อตัวเอกเป็น "${val}" เรียบร้อยแล้ว!`);
+        }
+        if (this.modalName) this.modalName.classList.remove('active');
+      });
+    }
+
+    // Prince Touch / Tap interaction in Lobby
+    const princeImg = document.getElementById("lobby-featured-img");
+    if (princeImg) {
+      princeImg.addEventListener('click', () => {
+        const activeTab = document.querySelector('.prince-tab.active');
+        const princeKey = activeTab ? activeTab.dataset.prince : 'cedric';
+        this.handlePrinceTap(princeKey);
+      });
+    }
+
+    // Skip Button Handler
+    const skipBtn = document.getElementById("btn-hud-skip");
+    if (skipBtn) {
+      skipBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.toggleSkip();
+      });
+    }
 
     // In-game menu actions
     document.getElementById('btn-save-slot').addEventListener('click', () => {
@@ -636,7 +683,23 @@ class OtomeGame {
     if (this.historyLog.length > 400) this.historyLog.splice(0, this.historyLog.length - 400);
 
     // Dialogue typing effect
-    this.startTypewriter(scene.text, () => {
+    // Dynamic Player Name replacement in dialogue
+    let displayText = scene.text || "";
+    if (scene.speaker !== "narrator" && this.playerName) {
+      displayText = displayText.replace(/คุณ/g, this.playerName);
+    }
+
+    // Screen FX Triggers
+    if (displayText && (displayText.includes("ฟ้าร้อง") || displayText.includes("พายุ") || displayText.includes("บุกโจมตี") || displayText.includes("อสูรเงา") || sceneId === "ch3_start")) {
+      this.triggerScreenShake();
+      if (window.audioManager && window.audioManager.playThunder) window.audioManager.playThunder();
+    }
+    if (displayText && (displayText.includes("แสงสีทอง") || displayText.includes("เวทมนตร์") || displayText.includes("เปล่งแสง") || displayText.includes("ชำระล้าง"))) {
+      this.triggerScreenFlash("gold");
+      if (window.audioManager && window.audioManager.playMagicCast) window.audioManager.playMagicCast();
+    }
+
+    this.startTypewriter(displayText, () => {
       if (scene.choices && scene.choices.length > 0) {
         this.renderChoices(scene.choices);
         this.nextIndicatorEl.style.display = "none";

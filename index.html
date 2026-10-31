@@ -8,10 +8,13 @@
   <meta name="apple-mobile-web-app-title" content="Destiny of Hearts">
   <meta name="theme-color" content="#0c0914">
   <title>พันธสัญญาหัวใจ: สี่ราชันย์มนตรา (Destiny of Hearts)</title>
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="screen-flash-overlay"></div>
+  <div id="floating-heart-container" class="floating-heart-container"></div>
   <!-- Ambient Audio Controls -->
   <div id="audio-panel">
     <button id="bgm-toggle-btn" title="เปิด/ปิด ดนตรีประกอบ" aria-label="เปิด/ปิด ดนตรีประกอบ" class="off">🎵</button>
@@ -59,7 +62,7 @@
       <div class="player-info-pill">
         <div class="player-avatar">✨</div>
         <div class="player-text">
-          <span class="player-name">ธิดาแห่งมนตรา</span>
+          <span class="player-name" id="display-player-name">เรเนีย (ธิดาแห่งมนตรา)</span> <button id="btn-edit-player-name" class="btn-subtle-pill" title="เปลี่ยนชื่อตัวเอก">✏️ เปลี่ยนชื่อ</button>
           <span class="player-rank">ระดับชะตากรรม: ผู้กุมประกายดาว</span>
         </div>
       </div>
@@ -415,5 +418,28 @@
   <script src="audio.js"></script>
   <script src="story.js"></script>
   <script src="script.js"></script>
+
+  <!-- ============================================================== -->
+  <!-- MODAL: CUSTOM HEROINE NAME (ตั้งชื่อตัวเอก)                    -->
+  <!-- ============================================================== -->
+  <div id="modal-name" class="modal">
+    <div class="modal-content" style="max-width: 440px; text-align: center; border: 1px solid rgba(230, 194, 122, 0.4); box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
+      <div class="modal-header">
+        <h3>👑 ตั้งชื่อตัวเอกของคุณ</h3>
+        <button class="modal-close" data-close="modal-name">✕</button>
+      </div>
+      <p style="color: #e0d0eb; font-size: 0.95rem; margin-top: 14px; line-height: 1.6;">
+        สี่ราชันย์จะเรียกชื่อนี้แทนคำว่า <i>"คุณ"</i> ในทุกบทสนทนา
+      </p>
+      <div class="name-input-group" style="margin: 20px 0;">
+        <input type="text" id="input-player-name" class="name-input-box" maxlength="16" placeholder="พิมพ์ชื่อของคุณ (เช่น ริน, มายด์, ลิลลี่)" value="เรเนีย">
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <button id="btn-save-name" class="btn-primary" style="flex: 1; padding: 12px;">✨ บันทึกชื่อตัวเอก</button>
+        <button class="btn-subtle modal-close" data-close="modal-name" style="padding: 12px 18px;">ยกเลิก</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

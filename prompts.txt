@@ -1,0 +1,52 @@
+================================================================================
+ชุด PROMPT เจนภาพทั้งหมดสำหรับ DESTINY OF HEARTS (สเกล 16:9 แนวนอน)
+สำหรับใช้กับ Google Flow / Imagen / Midjourney
+================================================================================
+
+[หมวด 1: ภาพฉากหลังสถานที่ (10 ฉาก)]
+
+1. ห้องนอนโลกปัจจุบัน (ก่อนข้ามมิติ) -> บันทึกชื่อ: assets/bg_bedroom.jpg
+anime visual novel background art, cozy modern anime bedroom at night, a wooden study desk with a warm glowing amber reading lamp, an open antique leather book with glowing gold constellation dust, wooden bookshelf filled with books, soft rain streaks on the window glass with blurred city night lights outside, warm comfortable bed with fluffy blankets, Makoto Shinkai aesthetic, 16:9 widescreen, no people, no characters, high resolution, masterpiece
+
+2. โถงสภาขุนนางหลวง (Grand Council Chamber) -> บันทึกชื่อ: assets/bg_council.jpg
+anime visual novel background art, grand imperial fantasy council chamber and parliament hall, massive long polished mahogany conference table surrounded by ornate high-backed velvet chairs, towering Gothic stained glass windows casting dramatic beams of light, royal heraldic banners hanging from stone walls, grand crystal chandeliers, aristocratic dark royal fantasy aesthetic, 16:9 widescreen, no people, no characters, highly detailed
+
+3. ลานฝึกดาบกองอัศวินสุริยัน (Knight Training Arena) -> บันทึกชื่อ: assets/bg_training.jpg
+anime visual novel background art, fantasy knight garrison training arena and courtyard under warm golden morning sunlight, stone arena floor, wooden weapon racks holding gleaming steel swords spears and golden shields, archery practice targets, fluttering golden sun banners, ancient stone fortress walls, cinematic sunlight rays and dust motes, 16:9 widescreen, no people, no characters, vibrant and heroic ambiance
+
+4. ยอดหอนาฬิกาเมืองหลวงยามค่ำคืน (Clock Tower Rooftop) -> บันทึกชื่อ: assets/bg_rooftop.jpg
+anime visual novel background art, secret midnight rooftop hideout atop a gothic fantasy clock tower, massive illuminated brass clock gears and ringing bells, stone balustrade, breathtaking panoramic night view of a sprawling fantasy imperial city below glowing with warm lantern lights, starry night sky with twin moons, dark fantasy manhwa style, 16:9 widescreen, no people, no characters, epic scale
+
+5. ทะเลสาบจันทราล่องเรือใต้แสงดาว (Moonlit Crystal Lake) -> บันทึกชื่อ: assets/bg_lake.jpg
+anime visual novel background art, romantic enchanted crystal lake at night, a small empty wooden boat gently floating near the shore decorated with glowing white flowers, calm reflective water reflecting starry night sky and twin glowing moons, floating magical starlight particles, weeping willows and glowing flora along the water edge, ethereal purple and celestial blue lighting, 16:9 widescreen, no people, no characters, ultra romantic
+
+6. ห้องนอนเจ้าหญิงในพระราชวังหลวง (Royal Palace Bedroom) -> บันทึกชื่อ: assets/bg_room.jpg
+anime visual novel background art, luxurious royal fantasy palace bedroom, large four-poster canopy bed with sheer lace curtains, warm crystal chandeliers, marble fireplace with gentle amber embers, French balcony doors opening to a moonlit garden, soft velvet chaise lounge, elegant gold filigree decor, warm and dreamy ambiance, 16:9 widescreen, no people, no characters, high fantasy otome style
+
+7. โถงงานเต้นรำหน้ากากใต้แสงจันทร์ (Masquerade Grand Ballroom) -> บันทึกชื่อ: assets/bg_ballroom.jpg
+anime visual novel background art, magnificent imperial palace grand ballroom decorated for a royal masquerade gala, polished reflective marble floor, cascading tiered crystal chandeliers, tall gilded archways draped in royal purple velvet, balcony overlooking starry sky, floating golden sparkles, elegant and opulent fantasy atmosphere, 16:9 widescreen, no people, no characters
+
+8. หอสมุดหลวงมนตราโบราณ (Grand Royal Archives & Library) -> บันทึกชื่อ: assets/bg_library.jpg
+anime visual novel background art, towering multi-story ancient fantasy library and royal archives, endless wooden bookshelves reaching up to vaulted ceilings, spiral staircases, rolling book ladders, floating enchanted glowing tomes and magical starlight orbs, warm scholarly lighting through stained glass, 16:9 widescreen, no people, no characters, mysterious and magical
+
+9. เรือนกระจกกุหลาบดำและลานน้ำพุ (Black Rose Conservatory) -> บันทึกชื่อ: assets/bg_greenhouse.jpg
+anime visual novel background art, breathtaking Victorian gothic glasshouse conservatory filled with rare blooming black roses and exotic bioluminescent plants, sunlight filtering through ornate iron glass dome, a central white marble fountain with crystal clear splashing water, stone pathway with rose petals, 16:9 widescreen, no people, no characters, romantic and mysterious
+
+10. สมรภูมิพระราชวังคืนจันทร์สีเลือด (Blood Moon Battlefield) -> บันทึกชื่อ: assets/bg_battle.jpg
+anime visual novel background art, imperial palace courtyard and gates during an epic dark siege, sky dominated by an eerie glowing crimson blood moon eclipse, swirling dark shadow mist, crumbling stone rubble, flickering blue magical flame braziers, glowing magic defense barrier cracks, dramatic dark fantasy war atmosphere, 16:9 widescreen, no people, no characters
+
+
+================================================================================
+[หมวด 2: ภาพ Event CG คัทซีนตอนจบสุดฟิน (4 True Endings)]
+
+11. True Ending เซดริก (ดยุกแห่งแดนเหนือ) -> บันทึกชื่อ: assets/cg_cedric_true.jpg
+anime visual novel romantic event CG, handsome noble duke with short silver-white hair and deep amethyst purple eyes wearing an ornate black and gold royal groom uniform, gently holding the hands of his bride in a white wedding gown, kissing her knuckles tenderly, standing on a grand cathedral balcony adorned with white and black roses, starlight and golden particles raining from the night sky, warm blush on his handsome face, romantic otome manhwa illustration, 16:9 widescreen, masterpiece, emotional and sweet
+
+12. True Ending ลูเชียน (มหาปุโรหิต) -> บันทึกชื่อ: assets/cg_lucian_true.jpg
+anime visual novel romantic event CG, ethereal handsome high priest with long silky silver-cyan hair and shimmering violet eyes wearing white and gold celestial ceremonial robes, cupping the heroine's cheek with a tender loving smile, leaning in closely under the starry dome of the grand star observatory, glowing celestial magic circles and constellation particles swirling around them, intimate romantic lighting, otome manhwa art, 16:9 widescreen, masterpiece
+
+13. True Ending ลีออน (หัวหน้าอัศวิน) -> บันทึกชื่อ: assets/cg_leon_true.jpg
+anime visual novel romantic event CG, handsome energetic knight commander with messy bright golden-blonde hair and warm amber-gold eyes in polished silver and gold knight armor, kneeling on one knee with a charming flushed smile, slipping a sparkling gold ring onto the heroine's left finger, surrounded by a sea of blooming sunflowers and red roses in the palace garden, radiant golden sunset backlighting, joyful romantic otome art, 16:9 widescreen, masterpiece
+
+14. True Ending เคล (จอมโจรเงา) -> บันทึกชื่อ: assets/cg_kael_true.jpg
+anime visual novel romantic event CG, charismatic handsome rogue with ruffled jet-black hair with a white streak and striking crimson eyes, stylish dark leather cloak, standing atop the grand clock tower roof under a glowing silver full moon, wrapping his arm protectively around the heroine's waist and looking down at her with a tender smirk and flushed cheeks, glittering lights of the vast fantasy capital city below, wind blowing their cloaks, thrilling romantic otome manhwa art, 16:9 widescreen, masterpiece
