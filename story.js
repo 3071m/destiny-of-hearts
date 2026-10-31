@@ -55,7 +55,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-bedroom",
+    "bg": "bg-library",
     "text": "คุณลุกไปชงโกโก้ร้อน แล้วเดินผ่านห้องหนังสือเก่าของคุณยาย",
     "next": "pro_p1_4"
   },
@@ -63,7 +63,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-bedroom",
+    "bg": "bg-library",
     "text": "จู่ๆ ก็มีแสงสีทองส่องออกมาจากชั้นหนังสือเก่า",
     "next": "pro_p1_5"
   },
@@ -71,7 +71,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-bedroom",
+    "bg": "bg-library",
     "text": "บนชั้นมีสมุดปกหนังสีดำประดับอัญมณีรูปดาววางอยู่",
     "next": "pro_p1_6"
   },
@@ -79,7 +79,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-bedroom",
+    "bg": "bg-library",
     "text": "คุณวางแก้วโกโก้ลง แล้วหยิบสมุดเล่มนั้นขึ้นมาดู",
     "next": "pro_p1_7"
   },
@@ -87,7 +87,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-bedroom",
+    "bg": "bg-library",
     "text": "หน้าปกเขียนไว้ว่า 'พันธสัญญาหัวใจ: สี่ราชันย์แห่งเอลีเซียม'",
     "next": "pro_p1_8"
   },
@@ -95,7 +95,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-bedroom",
+    "bg": "bg-library",
     "text": "'สมุดอะไรกันเนี่ย...' คุณพึมพำพลางแตะลงบนอัญมณีตรงกลางปก",
     "next": "pro_p1_9"
   },
@@ -103,7 +103,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-bedroom",
+    "bg": "bg-library",
     "text": "ทันใดนั้น อัญมณีทั้งสี่สีก็เปล่งแสงสว่างจ้าขึ้นมาทันที!",
     "next": "pro_p1_10"
   },
@@ -111,7 +111,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-bedroom",
+    "bg": "bg-library",
     "text": "หน้ากระดาษเปิดพลิกเองอย่างรวดเร็ว พร้อมกับมีแสงหมุนวนรอบตัวคุณ",
     "next": "pro_p1_11"
   },
@@ -119,7 +119,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-bedroom",
+    "bg": "bg-library",
     "text": "คุณพยายามจะปล่อยมือ แต่วงแหวนแสงกลับดึงตัวคุณเข้าไป!",
     "next": "pro_p1_12"
   },
@@ -1380,7 +1380,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: วิกฤตคืนจันทร์สีเลือด",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "คืนต่อมา ท้องฟ้าเปลี่ยนเป็นสีแดงเข้ม กองทัพเงาเริ่มบุกโจมตีพระราชวัง!",
     "next": "ch3_p1_2"
   },
@@ -1388,7 +1388,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: วิกฤตคืนจันทร์สีเลือด",
     "speaker": "cedric",
     "char": "cedric",
-    "bg": "bg-shrine",
+    "bg": "bg-battle",
     "text": "'ทุกคนเตรียมพร้อมรับมือ! เราต้องคุ้มกันเธอไปที่แท่นพิธีวิหารดวงดาวเพื่อเปิดม่านพลังขั้นสูงสุด!'",
     "next": "ch3_p1_3",
     "charImg": "assets/char_cedric.png",
@@ -1399,7 +1399,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: วิกฤตคืนจันทร์สีเลือด",
     "speaker": "lucian",
     "char": "lucian",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "'พวกมอนสเตอร์กำลังล้อมเข้ามาแล้ว! คุณต้องเลือกส่งพลังแสงดาวให้หนึ่งในพวกเราเพื่อทะลวงฝูงบอสมอนสเตอร์ครับ!'",
     "next": "ch3_choice_battle",
     "charImg": "assets/char_lucian.png",
@@ -1410,7 +1410,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: วิกฤตคืนจันทร์สีเลือด",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "ศัตรูกำลังพุ่งเข้ามา คุณจะเลือกใช้แผนรับมือของใคร?",
     "choices": [
       {
@@ -1453,7 +1453,7 @@ const STORY_DATA = {
     "speaker": "cedric",
     "char": "cedric",
     "charImg": "assets/char_cedric_smile.png",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "เซดริกผสานพลังกับคุณโค่นบอสมอนสเตอร์ลงในดาบเดียว ก่อนจะรีบดึงคุณเข้ามากอดแน่นด้วยความโล่งอก 'ขอบคุณพระเจ้าที่เธอปลอดภัย... ฉันรักและเป็นห่วงเธอแทบขาดใจเลยรู้ไหม'",
     "next": "ch3_c1_cedric_ext_1"
   },
@@ -1462,7 +1462,7 @@ const STORY_DATA = {
     "speaker": "lucian",
     "char": "lucian",
     "charImg": "assets/char_lucian_blush.png",
-    "bg": "bg-shrine",
+    "bg": "bg-battle",
     "text": "ลูเชียนร่ายเวทดาราพร้อมกับคุณจนความมืดสลายหายไปหมดสิ้น เขาประคองใบหน้าคุณด้วยความรักใคร่ 'ขอบคุณที่เลือกเชื่อใจผมนะครับ คุณคือแสงสว่างเดียวในชีวิตผมเลย'",
     "next": "ch3_c1_lucian_ext_1"
   },
@@ -1471,7 +1471,7 @@ const STORY_DATA = {
     "speaker": "leon",
     "char": "leon",
     "charImg": "assets/char_leon_blush.png",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "ลีออนพุ่งเข้าฟันศัตรูจนพ่ายแพ้แล้วรีบวิ่งมากอดคุณไว้แน่น 'คุณไม่บาดเจ็บตรงไหนใช่ไหมครับ! ผมดีใจที่สุดเลยที่ปกป้องคุณไว้ได้!'",
     "next": "ch3_c1_leon_ext_1"
   },
@@ -1480,7 +1480,7 @@ const STORY_DATA = {
     "speaker": "kael",
     "char": "kael",
     "charImg": "assets/char_kael_blush.png",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "เคลใช้พลังของคุณจัดการบอสอย่างรวดเร็ว แม้จะได้แผลถลอกแต่เขากลับยิ้มกว้างพลางลูบหัวคุณ 'อย่าร้องไห้สิยัยบ๊อง แค่เธอปลอดภัย ฉันก็ไม่เป็นไรสักนิด!'",
     "next": "ch3_c1_kael_ext_1"
   },
@@ -1491,7 +1491,7 @@ const STORY_DATA = {
     "charImg": "assets/char_cedric.png",
     "char2": "leon",
     "char2Img": "assets/char_leon.png",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "ทั้งสี่คนต้องฝืนสู้จนบาดเจ็บสาหัสกว่าจะเอาชนะได้ พวกเขามองคุณด้วยความเสียใจ",
     "next": "route_branch_evaluation"
   },
@@ -1858,7 +1858,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-greenhouse",
     "text": "เขาจับมือคุณเดินไปที่เรือนกระจกกุหลาบดำและลานน้ำพุ",
     "next": "cedric_ep2_6",
     "charImg": "assets/char_cedric.png"
@@ -1867,7 +1867,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-greenhouse",
     "text": "ที่เรือนกระจกกุหลาบดำมีดอกไม้บานสะพรั่ง บรรยากาศสดชื่นมาก",
     "next": "cedric_ep2_7",
     "charImg": "assets/char_cedric.png"
@@ -5239,7 +5239,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 5: ชัยชนะแห่งรักแท้",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "ลีออนต่อสู้อย่างกล้าหาญและคว้าชัยชนะกลับมาได้อย่างปลอดภัย เพื่อรักษาสัญญาที่ให้ไว้กับคุณ",
     "next": "leon_ep5_good_1_ext_1",
     "charImg": "assets/char_leon.png"
@@ -5275,7 +5275,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 5: การปกป้องเพียงลำพัง",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "ลีออนยิ้มให้คุณอย่างมั่นใจ 'ไม่ต้องห่วงนะ ผมจะรีบกลับมาหาคุณแน่นอน!'",
     "next": "leon_ep5_bad_1_ext_1",
     "charImg": "assets/char_leon.png"
@@ -5487,7 +5487,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-rooftop",
     "text": "คุณเดินไปกับเคลเพื่อมุ่งหน้าไปยังฐานลับบนหอนาฬิกา",
     "next": "kael_ep1_sub_1",
     "charImg": "assets/char_kael.png"
@@ -6990,7 +6990,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-greenhouse",
     "text": "คุณก้มลงดมกลิ่นหอมของดอกกุหลาบดำ",
     "next": "cedric_ep2_sub_4",
     "charImg": "assets/char_cedric.png"
@@ -7017,7 +7017,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-greenhouse",
     "text": "เขาตัดดอกกุหลาบดำดอกที่สวยที่สุด แล้วใช้เวทมนตร์ลบหนามออกจนหมด",
     "next": "cedric_ep2_sub_7",
     "charImg": "assets/char_cedric.png"
@@ -7035,7 +7035,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-greenhouse",
     "text": "คุณรับดอกกุหลาบดำมาถือไว้ กลิ่นหอมเหมือนกลิ่นตัวของเซดริกเป๊ะ",
     "next": "cedric_ep2_sub_9",
     "charImg": "assets/char_cedric.png"
@@ -7053,7 +7053,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-greenhouse",
     "text": "เมื่อเดินมาถึงลานน้ำพุ ละอองน้ำกระทบแดดเกิดเป็นรุ้งกินน้ำสายเล็กๆ",
     "next": "cedric_ep2_sub_11",
     "charImg": "assets/char_cedric.png"
@@ -7071,7 +7071,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-greenhouse",
     "text": "คุณชี้ให้เขาดูรุ้งกินน้ำด้วยความตื่นเต้น",
     "next": "cedric_ep2_sub_13",
     "charImg": "assets/char_cedric_smile.png"
@@ -7089,7 +7089,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-greenhouse",
     "text": "เขากุมมือคุณเดินเล่นรอบน้ำพุอย่างสบายอารมณ์",
     "next": "cedric_ep2_sub_15",
     "charImg": "assets/char_cedric.png"
@@ -7107,7 +7107,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-greenhouse",
     "text": "คุณพยักหน้ารับด้วยความดีใจที่เขาตามใจขนาดนี้",
     "next": "cedric_ep2_sub_17",
     "charImg": "assets/char_cedric_smile.png"
@@ -7125,7 +7125,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-garden",
+    "bg": "bg-greenhouse",
     "text": "ทั้งสองคนใช้เวลาช่วงบ่ายร่วมกันอย่างมีความสุข",
     "next": "cedric_ep2_3",
     "charImg": "assets/char_cedric.png"
@@ -8718,7 +8718,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "leon",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "'ช่วยผูกริบบิ้นนำโชคของคุณไว้ที่ข้อมือผมหน่อยได้ไหมครับ? มีสัญลักษณ์ของคุณอยู่ด้วย ผมชนะได้แน่นอนครับ!'",
     "next": "leon_ep5_sub_4",
     "charImg": "assets/char_leon_blush.png"
@@ -8727,7 +8727,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "คุณผูกริบบิ้นสีทองเข้าที่ข้อมือของลีออน เพื่ออวยพรให้เขาปลอดภัย",
     "next": "leon_ep5_sub_5",
     "charImg": "assets/char_leon.png"
@@ -8745,7 +8745,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "ในจังหวะสุดท้าย ลีออนปัดดาบของคู่ต่อสู้จนหลุดมือและคว้าชัยชนะมาได้!",
     "next": "leon_ep5_sub_7",
     "charImg": "assets/char_leon.png"
@@ -8763,7 +8763,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "ลีออนชูดาบขึ้นฟ้าพร้อมเสียงโห่ร้องยินดีของเหล่าอัศวิน",
     "next": "leon_ep5_sub_9",
     "charImg": "assets/char_leon_blush.png"
@@ -8781,7 +8781,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-training",
     "text": "กองอัศวินทุกคนต่างยอมรับคุณเป็นคนสำคัญของท่านหัวหน้าอัศวิน",
     "next": "leon_ep5_3",
     "charImg": "assets/char_leon_blush.png"
@@ -9159,7 +9159,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-garden",
+    "bg": "bg-rooftop",
     "text": "คุณหัวเราะให้กับท่าทางเขินที่หาดูได้ยากของเขา",
     "next": "kael_ep2_sub_17",
     "charImg": "assets/char_kael.png"
@@ -9177,7 +9177,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 2: เดทแรกสุดพิเศษ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-garden",
+    "bg": "bg-rooftop",
     "text": "ทั้งคู่เดินเล่นในตลาดจนถึงช่วงเย็นอย่างสนุกสนาน",
     "next": "kael_ep2_3",
     "charImg": "assets/char_kael.png"
@@ -9222,7 +9222,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 3: ง้อคนขี้หวง",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-rooftop",
     "text": "เขาพาคุณกระโดดขึ้นไปนั่งบนแนวกำแพงหิน แล้วนั่งลงข้างๆ",
     "next": "kael_ep3_after_sub_6",
     "charImg": "assets/char_kael_blush.png"
@@ -9240,7 +9240,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 3: ง้อคนขี้หวง",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-rooftop",
     "text": "พอคุณหันมาดุ เคลก็หัวเราะร่าอย่างชอบใจ",
     "next": "kael_ep3_after_sub_8",
     "charImg": "assets/char_kael.png"
@@ -9258,7 +9258,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 3: ง้อคนขี้หวง",
     "speaker": "kael",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-rooftop",
     "text": "'น่ารักแบบนี้ เดี๋ยวคืนนี้ฉันทำพายสตรอว์เบอร์รีของโปรดให้กินเป็นรางวัลชุดใหญ่เลย!'",
     "next": "kael_ep3_after_sub_10",
     "charImg": "assets/char_kael_blush.png"
@@ -9276,7 +9276,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 3: ง้อคนขี้หวง",
     "speaker": "kael",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-rooftop",
     "text": "'ปะ กลับฐานลับของเรากันเถอะ คืนนี้ฉันจะดีดกีตาร์ร้องเพลงให้เธอฟังเอง'",
     "next": "kael_ep3_after_sub_12",
     "charImg": "assets/char_kael_smile.png"
@@ -9285,7 +9285,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 3: ง้อคนขี้หวง",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-rooftop",
     "text": "คุณสองคนนั่งรับลมคุยเล่นกันจนลืมเวลา",
     "next": "kael_ep3_after_3",
     "charImg": "assets/char_kael.png"
@@ -9528,7 +9528,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทส่งท้าย: คำสารภาพรัก",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-garden",
+    "bg": "bg-rooftop",
     "text": "คุณกับเคลจับมือกัน พร้อมออกเดินทางผจญภัยครั้งใหม่ไปด้วยกัน",
     "next": "kael_ep6_sub_8",
     "charImg": "assets/char_kael_blush.png"
@@ -11802,7 +11802,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: อ้อมกอดของเซดริก",
     "speaker": "cedric",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "เซดริกมองคุณด้วยแววตาที่อบอุ่นขึ้นกว่าเดิมอย่างเห็นได้ชัด",
     "next": "ch3_c1_cedric_ext_2",
     "charImg": "assets/char_cedric_smile.png"
@@ -11811,7 +11811,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: อ้อมกอดของเซดริก",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "เวลาอยู่กันสองคน เซดริกดูอ่อนโยนและใจดีขึ้นมาก",
     "next": "ch3_c1_cedric_ext_3",
     "charImg": "assets/char_cedric.png"
@@ -11820,7 +11820,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: อ้อมกอดของเซดริก",
     "speaker": "cedric",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "'รู้ไหมว่าปกติฉันไม่ค่อยพูดยาวๆ กับใครแบบนี้หรอกนะ มีแค่เธอนี่แหละที่เป็นข้อยกเว้น'",
     "next": "ch3_c1_cedric_ext_4",
     "charImg": "assets/char_cedric_blush.png"
@@ -11829,7 +11829,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: อ้อมกอดของเซดริก",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "เขาเอื้อมมือมาช่วยจัดผมที่ปรกหน้าของคุณให้เบาๆ",
     "next": "ch3_c1_cedric_ext_5",
     "charImg": "assets/char_cedric.png"
@@ -11838,7 +11838,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: อ้อมกอดของเซดริก",
     "speaker": "cedric",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "'เวลาเธอเลือกเดินมาหาฉันก่อนคนอื่น... มันทำให้ฉันอารมณ์ดีไปทั้งวันเลยล่ะ'",
     "next": "ch3_c1_cedric_ext_6",
     "charImg": "assets/char_cedric_smile.png"
@@ -11847,7 +11847,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: อ้อมกอดของเซดริก",
     "speaker": "kael",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "เคลที่แอบมองอยู่ไกลๆ ตะโกนแซวขึ้นมา 'แหม ท่านดยุก ยิ้มน้อยยิ้มใหญ่เชียวครับ!'",
     "next": "ch3_c1_cedric_ext_7",
     "charImg": "assets/char_cedric.png",
@@ -11858,7 +11858,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: อ้อมกอดของเซดริก",
     "speaker": "cedric",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "'เงียบไปเลยเคล! ฉันแค่คุยธุระสำคัญกับเธอต่างหาก'",
     "next": "ch3_c1_cedric_ext_8",
     "charImg": "assets/char_cedric_blush.png",
@@ -11869,7 +11869,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: อ้อมกอดของเซดริก",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "คุณแอบยิ้มขำเมื่อเห็นเซดริกพยายามเก๊กขรึมแก้เขิน",
     "next": "ch3_c1_cedric_ext_9",
     "charImg": "assets/char_cedric_blush.png"
@@ -11878,7 +11878,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: อ้อมกอดของเซดริก",
     "speaker": "cedric",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "'ไม่ต้องไปฟังหมอนั่นเลยนะ... เอาเป็นว่ามีอะไรให้เรียกหาฉันเป็นคนแรกเสมอ เข้าใจไหม?'",
     "next": "ch3_c1_cedric_ext_10",
     "charImg": "assets/char_cedric_smile.png"
@@ -11887,7 +11887,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: อ้อมกอดของเซดริก",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "คุณพยักหน้ารับด้วยความสบายใจ",
     "next": "route_branch_evaluation",
     "charImg": "assets/char_cedric.png"
@@ -11896,7 +11896,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: แสงสว่างของลูเชียน",
     "speaker": "lucian",
     "char": "lucian",
-    "bg": "bg-shrine",
+    "bg": "bg-battle",
     "text": "ลูเชียนมองคุณด้วยรอยยิ้มละมุนที่ทำให้บรรยากาศรอบตัวสว่างไสว",
     "next": "ch3_c1_lucian_ext_2",
     "charImg": "assets/char_lucian_smile.png"
@@ -11905,7 +11905,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: แสงสว่างของลูเชียน",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-shrine",
+    "bg": "bg-battle",
     "text": "ละอองแสงเวทมนตร์ลอยวนรอบนิ้วมือของเขาเบาๆ",
     "next": "ch3_c1_lucian_ext_3",
     "charImg": "assets/char_lucian.png"
@@ -11914,7 +11914,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: แสงสว่างของลูเชียน",
     "speaker": "lucian",
     "char": "lucian",
-    "bg": "bg-shrine",
+    "bg": "bg-battle",
     "text": "'ทุกครั้งที่คุณเลือกเดินมาหาผม หัวใจของผมมันพองโตจนแทบจะเก็บอาการไม่อยู่เลยครับ'",
     "next": "ch3_c1_lucian_ext_4",
     "charImg": "assets/char_lucian_blush.png"
@@ -11923,7 +11923,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: แสงสว่างของลูเชียน",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-shrine",
+    "bg": "bg-battle",
     "text": "ลูเชียนก้มลงมากระซิบข้างหูคุณเบาๆ",
     "next": "ch3_c1_lucian_ext_5",
     "charImg": "assets/char_lucian_blush.png"
@@ -11932,7 +11932,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: แสงสว่างของลูเชียน",
     "speaker": "lucian",
     "char": "lucian",
-    "bg": "bg-shrine",
+    "bg": "bg-battle",
     "text": "'ความจริงผมแอบร่ายเวทอวยพรให้ตัวเองสมหวังในความรักกับคุณทุกคืนเลยนะ... ความลับนะครับ'",
     "next": "ch3_c1_lucian_ext_6",
     "charImg": "assets/char_lucian_blush.png"
@@ -11941,7 +11941,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: แสงสว่างของลูเชียน",
     "speaker": "leon",
     "char": "lucian",
-    "bg": "bg-shrine",
+    "bg": "bg-battle",
     "text": "ลีออนที่ยืนมองอยู่รีบเดินเข้ามาทัก 'คุณลูเชียนครับ แอบกระซิบอะไรกับคุณสองคนครับเนี่ย ขี้โกงนี่นา!'",
     "next": "ch3_c1_lucian_ext_7",
     "charImg": "assets/char_lucian_smile.png",
@@ -11952,7 +11952,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: แสงสว่างของลูเชียน",
     "speaker": "lucian",
     "char": "lucian",
-    "bg": "bg-shrine",
+    "bg": "bg-battle",
     "text": "'ความลับของคนรู้ใจกันครับคุณอัศวิน บอกไม่ได้หรอกนะ'",
     "next": "ch3_c1_lucian_ext_8",
     "charImg": "assets/char_lucian_smile.png",
@@ -11963,7 +11963,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: แสงสว่างของลูเชียน",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-shrine",
+    "bg": "bg-battle",
     "text": "คุณหัวเราะให้กับความขี้เล่นของลูเชียน",
     "next": "ch3_c1_lucian_ext_9",
     "charImg": "assets/char_lucian_smile.png"
@@ -11972,7 +11972,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: แสงสว่างของลูเชียน",
     "speaker": "lucian",
     "char": "lucian",
-    "bg": "bg-shrine",
+    "bg": "bg-battle",
     "text": "'ไว้มีโอกาสเมื่อไหร่ ไปนั่งดื่มชาชมดาวกับผมสองคนอีกนะครับ ผมจะรอคุณเสมอนะ'",
     "next": "ch3_c1_lucian_ext_10",
     "charImg": "assets/char_lucian_blush.png"
@@ -11981,7 +11981,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: แสงสว่างของลูเชียน",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-shrine",
+    "bg": "bg-battle",
     "text": "รอยยิ้มของลูเชียนทำเอาคุณแอบเขินขึ้นมา",
     "next": "route_branch_evaluation",
     "charImg": "assets/char_lucian.png"
@@ -11990,7 +11990,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: โล่กำบังของลีออน",
     "speaker": "leon",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "ลีออนยิ้มกว้างด้วยความดีใจจนดวงตาสีฟ้าเป็นประกายวิบวับ",
     "next": "ch3_c1_leon_ext_2",
     "charImg": "assets/char_leon_blush.png"
@@ -11999,7 +11999,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: โล่กำบังของลีออน",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "ลีออนรีบขยับมายืนข้างๆ คุณด้วยท่าทางประหม่าเล็กน้อย",
     "next": "ch3_c1_leon_ext_3",
     "charImg": "assets/char_leon.png"
@@ -12008,7 +12008,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: โล่กำบังของลีออน",
     "speaker": "leon",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "'ผมดีใจจริงๆ นะครับที่คุณเลือกพึ่งพาผม! ผมจะตั้งใจดูแลคุณให้ดียิ่งกว่าเดิมอีกครับ!'",
     "next": "ch3_c1_leon_ext_4",
     "charImg": "assets/char_leon_blush.png"
@@ -12017,7 +12017,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: โล่กำบังของลีออน",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "ลีออนหยิบพัดอันเล็กออกมาช่วยพัดให้คุณอย่างใส่ใจ",
     "next": "ch3_c1_leon_ext_5",
     "charImg": "assets/char_leon.png"
@@ -12026,7 +12026,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: โล่กำบังของลีออน",
     "speaker": "leon",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "'ผมกลัวคุณจะร้อนหรือเหนื่อย เลยพกทั้งพัด ทั้งผ้าเช็ดหน้า แล้วก็ลูกอมรสองุ่นติดตัวไว้ให้คุณตลอดเลยครับ'",
     "next": "ch3_c1_leon_ext_6",
     "charImg": "assets/char_leon_smile.png"
@@ -12035,7 +12035,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: โล่กำบังของลีออน",
     "speaker": "cedric",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "เซดริกเดินผ่านมามองพร้อมส่ายหัวนิดๆ 'เตรียมพร้อมยิ่งกว่าออกรบอีกนะลีออน'",
     "next": "ch3_c1_leon_ext_7",
     "charImg": "assets/char_leon_blush.png",
@@ -12046,7 +12046,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: โล่กำบังของลีออน",
     "speaker": "leon",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "'แน่นอนครับท่านดยุก! เรื่องดูแลคุณสำคัญที่สุดสำหรับผมนี่ครับ!'",
     "next": "ch3_c1_leon_ext_8",
     "charImg": "assets/char_leon_blush.png",
@@ -12057,7 +12057,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: โล่กำบังของลีออน",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "คุณรับลูกอมจากมือลีออนมาชิม รสชาติหวานอร่อยดี",
     "next": "ch3_c1_leon_ext_9",
     "charImg": "assets/char_leon.png"
@@ -12066,7 +12066,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: โล่กำบังของลีออน",
     "speaker": "leon",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "'เห็นคุณยิ้มแล้วผมมีแรงฮึดขึ้นเต็มร้อยเลยครับ!'",
     "next": "ch3_c1_leon_ext_10",
     "charImg": "assets/char_leon_smile.png"
@@ -12075,7 +12075,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: โล่กำบังของลีออน",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-battle",
     "text": "ความเป็นกันเองและจริงใจของลีออนทำให้คุณยิ้มได้เสมอ",
     "next": "route_branch_evaluation",
     "charImg": "assets/char_leon_smile.png"
@@ -12084,7 +12084,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: รอยยิ้มของเคล",
     "speaker": "kael",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "เคลยิ้มมุมปากอย่างอารมณ์ดีพลางควงมีดสั้นเวทมนตร์เก็บเข้าฝักอย่างคล่องแคล่ว",
     "next": "ch3_c1_kael_ext_2",
     "charImg": "assets/char_kael_smile.png"
@@ -12093,7 +12093,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: รอยยิ้มของเคล",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "เคลเดินเข้ามาใกล้แล้วก้มมองสบตาคุณตรงๆ",
     "next": "ch3_c1_kael_ext_3",
     "charImg": "assets/char_kael.png"
@@ -12102,7 +12102,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: รอยยิ้มของเคล",
     "speaker": "kael",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "'เลือกฉันแบบนี้ รู้ตัวหรือเปล่าว่ากำลังทำให้จอมโจรอย่างฉันใจแตกอยากเป็นคนดีเพื่อเธอคนเดียวน่ะ'",
     "next": "ch3_c1_kael_ext_4",
     "charImg": "assets/char_kael_blush.png"
@@ -12111,7 +12111,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: รอยยิ้มของเคล",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "เขาดีดนิ้วเสกดอกกุหลาบแดงขึ้นมาแล้วยื่นให้คุณ",
     "next": "ch3_c1_kael_ext_5",
     "charImg": "assets/char_kael.png"
@@ -12120,7 +12120,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: รอยยิ้มของเคล",
     "speaker": "kael",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "'มายากลพิเศษสำหรับคนพิเศษของฉัน... ชอบไหมล่ะยัยตัวแสบ?'",
     "next": "ch3_c1_kael_ext_6",
     "charImg": "assets/char_kael_smile.png"
@@ -12129,7 +12129,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: รอยยิ้มของเคล",
     "speaker": "lucian",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "ลูเชียนมองมาพร้อมรอยยิ้มรู้ทัน 'ใช้มายากลจีบสาวต่อหน้าทุกคนเลยนะครับคุณเคล'",
     "next": "ch3_c1_kael_ext_7",
     "charImg": "assets/char_kael_smile.png",
@@ -12140,7 +12140,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: รอยยิ้มของเคล",
     "speaker": "kael",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "'ช่วยไม่ได้นี่นา ก็เธอเลือกฉันเองนี่ครับท่านปุโรหิต'",
     "next": "ch3_c1_kael_ext_8",
     "charImg": "assets/char_kael_smile.png",
@@ -12151,7 +12151,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: รอยยิ้มของเคล",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "คุณรับดอกกุหลาบมาไว้พลางอมยิ้มกับท่าทางภูมิใจของเขา",
     "next": "ch3_c1_kael_ext_9",
     "charImg": "assets/char_kael.png"
@@ -12160,7 +12160,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: รอยยิ้มของเคล",
     "speaker": "kael",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "'อยู่ใกล้ๆ ฉันไว้นะ รับรองว่าฉันจะไม่ยอมให้เรื่องน่าเบื่อหรืออันตรายไหนมาแตะต้องเธอได้เลย'",
     "next": "ch3_c1_kael_ext_10",
     "charImg": "assets/char_kael_blush.png"
@@ -12169,7 +12169,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 3: รอยยิ้มของเคล",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-battle",
     "text": "แม้จะชอบกวนประสาท แต่เคลก็คอยดูแลคุณดีเสมอ",
     "next": "route_branch_evaluation",
     "charImg": "assets/char_kael.png"
