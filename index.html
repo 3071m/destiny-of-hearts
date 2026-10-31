@@ -205,28 +205,37 @@
           </div>
         </div>
 
-        <!-- Secondary Menu Cards Grid -->
+                <!-- Secondary Menu Cards Grid -->
         <div class="hub-sub-grid">
-          
+          <!-- Letters & Messages -->
+          <div class="hub-card sub-card" id="btn-hub-letters">
+            <div class="card-icon">💌</div>
+            <div class="card-desc">
+              <h4>จดหมาย & ข้อความลับ</h4>
+              <p>ความในใจจากสี่ราชันย์</p>
+            </div>
+            <span class="badge-count" id="badge-letters">4</span>
+          </div>
+
+          <!-- Character Profiles -->
+          <div class="hub-card sub-card" id="btn-hub-profiles">
+            <div class="card-icon">👑</div>
+            <div class="card-desc">
+              <h4>หอประวัติตัวละคร</h4>
+              <p>ข้อมูลลับและสิ่งที่ชอบ</p>
+            </div>
+          </div>
 
           <!-- Endings & Memories -->
           <div class="hub-card sub-card" id="btn-hub-gallery">
-            <div class="card-icon">🖼️</div>
+            <div class="card-icon">🏆</div>
             <div class="card-desc">
-              <h4>แกลเลอรีฉากจบ</h4>
+              <h4>หอเกียรติยศฉากจบ</h4>
               <p>บันทึกความทรงจำ</p>
             </div>
           </div>
-
-          <!-- Load Save Data -->
-          <div class="hub-card sub-card" id="btn-hub-load">
-            <div class="card-icon">💾</div>
-            <div class="card-desc">
-              <h4>จัดการเซฟ</h4>
-              <p>บันทึก / โหลดเกม</p>
-            </div>
-          </div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -458,6 +467,54 @@
       <button id="btn-eval-independent" class="btn-subtle" style="margin-top: 8px; width: 100%; font-size: 0.85rem;">
         🌸 เลือกเส้นทางอิสระของตัวเอง (Independent Route)
       </button>
+    </div>
+  </div>
+
+  
+  <!-- ============================================================== -->
+  <!-- SCREEN: ENDING & CREDITS (ฉากจบและเครดิตปิดม่าน)            -->
+  <!-- ============================================================== -->
+  <div id="screen-ending" class="screen">
+    <div class="ending-card">
+      <div class="ornament">✨ 💖 FINALE 💖 ✨</div>
+      <div class="ending-badge" id="ending-badge">👑 TRUE ROMANCE ENDING</div>
+      <h2 id="ending-title">มกุฎราชินีแห่งบัลลังก์สุริยัน</h2>
+      <h3 id="ending-type">บทอวสานแห่งความรักแท้</h3>
+
+      <div class="ending-char-photo">
+        <img id="ending-char-img" src="assets/cover.png" alt="Ending">
+      </div>
+
+      <div class="ending-honorary-title" id="ending-honorary-title">
+        ฉายาเกียรติยศ: <span id="ending-title-text">ราชินีคู่บัลลังก์แห่งเอลีเซียม</span>
+      </div>
+
+      <p id="ending-desc" class="ending-desc">...</p>
+
+      <div class="ending-stats">
+        <span>ระดับความผูกพันของหัวใจ:</span>
+        <strong id="ending-final-score">100%</strong>
+      </div>
+
+      <!-- Staff Credits Roll -->
+      <div class="ending-credits-wrap">
+        <div class="credits-header">✦ DESTINY OF HEARTS: ลิขิตรักแห่งราชันย์ ✦</div>
+        <div class="credits-body">
+          <div class="credit-row"><span class="c-role">บทประพันธ์ & เรื่องราว:</span> <span class="c-name">ทีมผู้สร้าง Destiny of Hearts</span></div>
+          <div class="credit-row"><span class="c-role">กำกับศิลป์ & ตัวละคร:</span> <span class="c-name">AI Generated Visual Novel Art</span></div>
+          <div class="credit-row"><span class="c-role">ดนตรีประกอบ & สังเคราะห์เสียง:</span> <span class="c-name">Web Audio Procedural Sound Engine</span></div>
+          <div class="credit-row"><span class="c-role">สถาปัตยกรรม & ออกแบบเกม:</span> <span class="c-name">Antigravity Agentic Studio</span></div>
+          <div class="credit-row"><span class="c-role">ตัวละครนำ:</span> <span class="c-name">เรเนีย & 4 ราชันย์แห่งเอลีเซียม</span></div>
+          <div class="credits-thanks">ขอขอบคุณผู้เล่นทุกท่านที่ร่วมสร้างตำนานรักในเอลีเซียม</div>
+        </div>
+      </div>
+
+      <div class="ending-actions">
+        <button id="btn-ending-other-route" class="btn-primary">👑 เล่นเส้นทางเจ้าชายคนอื่น</button>
+        <button id="btn-replay-route" class="btn-choice">📖 เริ่มเล่นใหม่อีกครั้ง</button>
+        <button id="btn-ending-gallery" class="btn-subtle">🏆 ชมแกลเลอรีฉากจบ</button>
+        <button id="btn-ending-lobby" class="btn-subtle">🏠 กลับสู่หน้าหลัก</button>
+      </div>
     </div>
   </div>
 

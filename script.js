@@ -325,10 +325,13 @@ class OtomeGame {
       this.switchScreen('gallery');
     });
 
-    document.getElementById('btn-hub-load').addEventListener('click', () => {
-      window.audioManager.playChoice();
-      this.modalMenu.classList.add('active');
-    });
+    const btnHubLoad = document.getElementById('btn-hub-load');
+    if (btnHubLoad) {
+      btnHubLoad.addEventListener('click', () => {
+        window.audioManager.playChoice();
+        this.modalMenu.classList.add('active');
+      });
+    }
 
     document.getElementById('btn-lobby-to-title').addEventListener('click', () => {
       window.audioManager.playClick();
@@ -1333,6 +1336,254 @@ class OtomeGame {
         btnContinue.classList.add('has-save');
       }
     } catch (e) {}
+  }
+
+
+
+  // Update heroine name display in Lobby header
+  updatePlayerNameDisplay() {
+    const el = document.getElementById('display-player-name');
+    if (el) {
+      el.textContent = `${this.playerName || "เรเนีย"} (ผู้ถือครองดวงใจ)`;
+    }
+  }
+
+  // Interactive Prince greeting dialogue & bounce animation in Lobby
+  handlePrinceTap(princeKey) {
+    if (!CHARACTERS[princeKey]) princeKey = 'cedric';
+    if (window.audioManager) window.audioManager.playHeartUp();
+
+    const prince = CHARACTERS[princeKey];
+    const quotes = {
+      cedric: [
+        "เรเนีย... เจ้ากำลังต้องการกำลังใจอยู่ใช่ไหม? ข้าอยู่ตรงนี้เสมอ",
+        "ไม่ว่าเส้นทางข้างหน้าจะยากลำบากเพียงใด มือคู่นี้จะไม่ปล่อยจากเจ้าเด็ดขาด",
+        "ทุกครั้งที่เห็นรอยยิ้มของเจ้า ความเหนื่อยล้าของข้าก็มลายหายไปสิ้น"
+      ],
+      lucian: [
+        "กำลังคิดอะไรอยู่เหรอ? แววตาของเจ้าในตอนนี้น่าค้นหายิ่งกว่าปริศนาโบราณใดๆ เสียอีก",
+        "หนังสือมีมากมายนับหมื่นเล่ม... แต่ไม่มีหน้าไหนงดงามเท่ารอยยิ้มของเจ้า",
+        "หากมีสิ่งใดที่เจ้าไม่เข้าใจ มาหาข้าได้ตลอดเวลานะ"
+      ],
+      leon: [
+        "ฮ่าๆ! มาแตะตัวข้าแบบนี้ เจ้ากำลังชวนข้าไปฝึกดาบหรืออยากไปเดินเล่นด้วยกันล่ะ?",
+        "ไม่ต้องกลัวอะไรทั้งนั้น ตราบใดที่ข้ายังมีลมหายใจ ข้าจะปกป้องเจ้าสุดชีวิต!",
+        "ถ้าเจ้าเหนื่อยเมื่อไหร่ บอกข้าได้เลยนะ ข้าพร้อมแบกเจ้ากลับปราสาทเสมอ!"
+      ],
+      kael: [
+        "หึ... จู่ๆ ก็เดินเข้ามาใกล้แบบนี้ ไม่กลัวเงาแห่งความมืดแล้วหรือ?",
+        "ข้าอาจจะไม่ถนัดพูดคำหวาน แต่ถ้าใครกล้าแตะต้องเจ้า... มันผู้นั้นจะไม่มีวันได้เห็นแสงตะวันอีก",
+        "อยู่ใกล้ๆ ข้าไว้... อย่าไปไกลสายตา"
+      ]
+    };
+
+    const list = quotes[princeKey] || quotes.cedric;
+    const randomQuote = list[Math.floor(Math.random() * list.length)];
+
+    if (this.lobbyPrinceQuote) {
+      this.lobbyPrinceQuote.textContent = `"${randomQuote}"`;
+    }
+
+    if (this.lobbyPrinceImg) {
+      this.lobbyPrinceImg.style.transform = 'scale(1.05) translateY(-8px)';
+      setTimeout(() => {
+        if (this.lobbyPrinceImg) this.lobbyPrinceImg.style.transform = '';
+      }, 300);
+    }
+
+    this.showToast(`✨ ${prince.name}: "${randomQuote}"`);
+  }
+
+  // Fast-Forward / Skip button controller
+  toggleSkip() {
+    this.isSkipping = !this.isSkipping;
+    const skipBtn = document.getElementById("btn-hud-skip");
+    if (skipBtn) {
+      skipBtn.classList.toggle('active', this.isSkipping);
+      skipBtn.textContent = this.isSkipping ? "⏩ กำลังข้าม..." : "⏩ ข้าม (Skip)";
+    }
+
+    if (this.isSkipping) {
+      if (this.skipInterval) clearInterval(this.skipInterval);
+      this.skipInterval = setInterval(() => {
+        const currentScene = STORY_DATA[this.currentSceneId];
+        if (!currentScene || (currentScene.choices && currentScene.choices.length > 0) || currentScene.isBranchEvaluation || currentScene.ending || !currentScene.next) {
+          this.toggleSkip();
+          return;
+        }
+        this.renderScene(currentScene.next);
+      }, 120);
+    } else {
+      if (this.skipInterval) {
+        clearInterval(this.skipInterval);
+        this.skipInterval = null;
+      }
+    }
+  }
+
+  // Cinematic Screen FX: Shake
+  triggerScreenShake() {
+    const gameScreen = document.getElementById('screen-game');
+    if (!gameScreen) return;
+    gameScreen.classList.remove('screen-shake');
+    void gameScreen.offsetWidth;
+    gameScreen.classList.add('screen-shake');
+    setTimeout(() => {
+      gameScreen.classList.remove('screen-shake');
+    }, 600);
+  }
+
+  // Cinematic Screen FX: Flash
+  triggerScreenFlash(color = 'white') {
+    const flashEl = document.getElementById('screen-flash-overlay');
+    if (!flashEl) return;
+    flashEl.className = 'screen-flash-overlay';
+    flashEl.classList.add(`flash-${color}`);
+    void flashEl.offsetWidth;
+    flashEl.classList.add('active');
+    setTimeout(() => {
+      flashEl.classList.remove('active', `flash-${color}`);
+    }, 500);
+  }
+
+  // Dynamic Scene-Based Procedural BGM Controller
+  updateBgmForCurrentScene() {
+    if (this.currentSceneId && typeof STORY_DATA !== 'undefined' && STORY_DATA[this.currentSceneId]) {
+      this.updateBgmForScene(this.currentSceneId, STORY_DATA[this.currentSceneId]);
+    } else if (window.audioManager) {
+      window.audioManager.setTheme('daily');
+    }
+  }
+
+  updateBgmForScene(sceneId, scene) {
+    if (!window.audioManager) return;
+    const bg = (scene && scene.bg) || '';
+
+    // 1. Battle & Crisis Theme (Blood Moon Requiem)
+    if (
+      bg === 'bg-battle' ||
+      sceneId.startsWith('ch3_') ||
+      sceneId.includes('_ep5_') ||
+      sceneId.includes('crisis') ||
+      sceneId.includes('battle')
+    ) {
+      window.audioManager.setTheme('battle');
+      return;
+    }
+
+    // 2. Romantic & Waltz Theme (Twin Moons Waltz)
+    if (
+      bg === 'bg-lake' ||
+      bg === 'bg-ballroom' ||
+      sceneId.includes('_true_') ||
+      sceneId.includes('_ep6_') ||
+      sceneId.includes('date') ||
+      sceneId.includes('confess') ||
+      sceneId.includes('waltz')
+    ) {
+      window.audioManager.setTheme('romance');
+      return;
+    }
+
+    // 3. Heartache, Sadness & Secret Confession Theme (Tears in the Rain)
+    if (
+      bg === 'bg-bedroom' ||
+      sceneId.includes('_ep4_') ||
+      sceneId.includes('trauma') ||
+      sceneId.includes('tears') ||
+      sceneId.includes('sorrow')
+    ) {
+      window.audioManager.setTheme('sad');
+      return;
+    }
+
+    // 4. Default in Story: Academy Daylight / Daily Routine
+    window.audioManager.setTheme('daily');
+  }
+
+  // Grand Ending Trigger
+  triggerEnding(endingData) {
+    const key = `${endingData.char || 'common'}_${endingData.type}`;
+    if (!this.unlockedEndings.includes(key)) {
+      this.unlockedEndings.push(key);
+      localStorage.setItem('otome_endings', JSON.stringify(this.unlockedEndings));
+    }
+
+    const titleEl = document.getElementById('ending-title');
+    const typeEl = document.getElementById('ending-type');
+    const descEl = document.getElementById('ending-desc');
+    const imgEl = document.getElementById('ending-char-img');
+    const scoreEl = document.getElementById('ending-final-score');
+    const badgeEl = document.getElementById('ending-badge');
+    const honorTitleEl = document.getElementById('ending-title-text');
+
+    if (titleEl) titleEl.textContent = endingData.title;
+    if (typeEl) typeEl.textContent = endingData.type;
+    if (descEl) descEl.textContent = endingData.desc;
+
+    const isTrue = endingData.type.includes('True') || endingData.type.includes('แท้');
+    if (badgeEl) {
+      if (isTrue) {
+        badgeEl.textContent = '👑 TRUE ROMANCE ENDING (บทอวสานแห่งรักแท้)';
+        badgeEl.style.background = 'linear-gradient(135deg, #e6c27a, #ff4d6d)';
+      } else if (endingData.char === 'common') {
+        badgeEl.textContent = '🕊️ INDEPENDENT MAIDEN ENDING (บทอวสานอิสตรีผู้เป็นเอก)';
+        badgeEl.style.background = 'linear-gradient(135deg, #64ffda, #1de9b6)';
+      } else {
+        badgeEl.textContent = '🌸 NORMAL COMPANION ENDING (บทอวสานแห่งมิตรภาพ)';
+        badgeEl.style.background = 'linear-gradient(135deg, #ba68c8, #ab47bc)';
+      }
+    }
+
+    const titles = {
+      cedric: isTrue ? 'มกุฎราชินีคู่บัลลังก์สุริยัน (Sun Queen)' : 'สหายคู่ใจแห่งราชันย์สุริยัน',
+      lucian: isTrue ? 'มหาปราชญ์หญิงคู่บัลลังก์มนตรา (Archmage Consort)' : 'ปราชญ์ผู้ร่วมค้นคว้าแห่งหอจดหมายเหตุ',
+      leon: isTrue ? 'คู่ชีวิตแห่งแม่ทัพอัศวินองครักษ์ (Knight Champion\'s Heart)' : 'สหายศึกผู้ร่วมสาบานแห่งคมดาบ',
+      kael: isTrue ? 'แสงสว่างหนึ่งเดียวแห่งเงามืด (Moonlit Shadow Consort)' : 'ผู้กุมความลับหนึ่งเดียวขององค์ชายเงา',
+      common: 'อิสตรีผู้กำหนดโชคชะตาด้วยตนเอง (Free-Spirited Heroine)'
+    };
+
+    if (honorTitleEl) {
+      honorTitleEl.textContent = titles[endingData.char] || 'ยอดดวงใจแห่งเอลีเซียม';
+    }
+
+    if (imgEl) {
+      if (endingData.char && CHARACTERS[endingData.char] && CHARACTERS[endingData.char].image) {
+        imgEl.src = isTrue ? CHARACTERS[endingData.char].image.replace('.png', '_smile.png') : CHARACTERS[endingData.char].image;
+      } else {
+        imgEl.src = "assets/cover.png";
+      }
+    }
+
+    const finalScore = endingData.char && this.affection[endingData.char] !== undefined
+      ? this.affection[endingData.char]
+      : Math.max(...Object.values(this.affection));
+    if (scoreEl) scoreEl.textContent = `${finalScore}%`;
+
+    if (window.audioManager) {
+      window.audioManager.playHeartUp();
+      window.audioManager.setTheme(isTrue ? 'romance' : 'daily');
+    }
+    this.switchScreen('ending');
+  }
+
+  // Floating Hearts Animation Trigger
+  triggerFloatingHeart(charKey, points) {
+    const container = document.getElementById('floating-heart-container');
+    if (!container) return;
+    const heart = document.createElement('div');
+    heart.className = 'floating-heart-item';
+    const isUp = points > 0;
+    heart.textContent = isUp ? `+${points} ❤️` : `${points} 💔`;
+    heart.style.left = `${Math.random() * 40 + 30}%`;
+    heart.style.top = `${Math.random() * 20 + 40}%`;
+    if (CHARACTERS[charKey]) {
+      heart.style.color = CHARACTERS[charKey].color;
+    }
+    container.appendChild(heart);
+    setTimeout(() => {
+      heart.remove();
+    }, 1500);
   }
 
 }
