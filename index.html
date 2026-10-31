@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Destiny of Hearts">
+  <meta name="theme-color" content="#0c0914">
+  <title>พันธสัญญาหัวใจ: สี่ราชันย์มนตรา (Destiny of Hearts)</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Ambient Audio Controls -->
+  <div id="audio-panel">
+    <button id="bgm-toggle-btn" title="เปิด/ปิด ดนตรีประกอบ" aria-label="เปิด/ปิด ดนตรีประกอบ" class="off">🎵</button>
+    <button id="sfx-toggle-btn" title="เปิด/ปิด เสียงเอฟเฟกต์" aria-label="เปิด/ปิด เสียงเอฟเฟกต์">🔊</button>
+  </div>
+
+  <!-- Background Layer -->
+  <div id="bg-container" class="bg-scene bg-palace">
+    <div class="vignette"></div>
+    <div class="particles" id="particles"></div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- SCREEN 1: CINEMATIC TITLE SCREEN (หน้าจอเริ่มต้นเกมสไตล์ Otome แท้) -->
+  <!-- ============================================================== -->
+  <div id="screen-title" class="screen active">
+    <div class="title-backdrop">
+      <img src="assets/cover.png" alt="Cover Art" class="title-bg-img">
+      <div class="title-overlay-gradient"></div>
+    </div>
+    
+    <div class="title-content">
+      <div class="ornament">✦ ✧ DESTINY OF HEARTS ✧ ✦</div>
+      <h1 class="game-title">พันธสัญญาหัวใจ</h1>
+      <h2 class="game-subtitle">สี่ราชันย์มนตราแห่งเอลีเซียม</h2>
+      <p class="tagline">"เมื่อโชคชะตานำพาเจ้าสู่ต่างพิภพ... ชายใดในสี่ราชันย์ที่จะได้ครอบครองดวงใจเจ้า?"</p>
+      
+      <div class="title-tap-prompt" id="btn-tap-start">
+        <span class="pulsing-text">✨ แตะที่นี่เพื่อเข้าสู่พระราชวัง (Tap to Enter) ✨</span>
+      </div>
+
+      <div class="title-footer-actions">
+        <button id="btn-title-load" class="btn-subtle">📂 โหลดบันทึก (Load Game)</button>
+        <button id="btn-title-gallery" class="btn-subtle">📖 แกลเลอรีฉากจบ (Gallery)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- SCREEN 2: MAIN GAME HUB / LOBBY (หน้าหลักของเกมเหมือนเกมจีบหนุ่มจริง) -->
+  <!-- ============================================================== -->
+  <div id="screen-lobby" class="screen">
+    <!-- Lobby Top Bar -->
+    <div class="lobby-top-bar">
+      <div class="player-info-pill">
+        <div class="player-avatar">✨</div>
+        <div class="player-text">
+          <span class="player-name">ธิดาแห่งมนตรา</span>
+          <span class="player-rank">ระดับชะตากรรม: ผู้กุมประกายดาว</span>
+        </div>
+      </div>
+      <div class="lobby-top-actions">
+        <button id="btn-lobby-to-title" class="btn-hud">🚪 ออกสู่หน้าแรก</button>
+      </div>
+    </div>
+
+    <!-- Lobby Main Content Area -->
+    <div class="lobby-main-layout">
+      <!-- Left Column: Featured Prince Greeting & Live Affinity -->
+      <div class="lobby-prince-showcase">
+        <div class="prince-cutout-wrap">
+          <img id="lobby-featured-img" src="assets/char_cedric.png" alt="Featured Prince">
+        </div>
+        <div class="prince-quote-bubble">
+          <span id="lobby-prince-quote">"กลับมาแล้วเหรอ... ฉันกำลังรอเธออยู่พอดีเลย"</span>
+        </div>
+        <div class="prince-switcher">
+          <button class="prince-tab active" data-prince="cedric">เซดริก</button>
+          <button class="prince-tab" data-prince="lucian">ลูเชียน</button>
+          <button class="prince-tab" data-prince="leon">ลีออน</button>
+          <button class="prince-tab" data-prince="kael">เคล</button>
+        </div>
+      </div>
+
+      <!-- Right Column: Game Mode Navigation Hub -->
+      <div class="lobby-nav-hub">
+        <!-- Main Story Banner (Primary Call to Action) -->
+        <div class="hub-card story-card" id="btn-hub-story">
+          <div class="hub-card-glow"></div>
+          <div class="hub-card-content">
+            <span class="hub-tag">MAIN CAMPAIGN</span>
+            <h3>📖 บันทึกเรื่องราวหลัก (Story Mode)</h3>
+            <p id="lobby-story-status">ก้าวเข้าสู่การผจญภัยและบททดสอบแห่งโชคชะตา</p>
+            <button class="btn-primary hub-btn">✨ ดำเนินเนื้อเรื่องต่อ</button>
+          </div>
+        </div>
+
+        <!-- Secondary Menu Cards Grid -->
+        <div class="hub-sub-grid">
+          <!-- Letters & Messages -->
+          <div class="hub-card sub-card" id="btn-hub-letters">
+            <div class="card-icon">💌</div>
+            <div class="card-desc">
+              <h4>จดหมาย & ข้อความลับ</h4>
+              <p>ความในใจจากสี่ราชันย์</p>
+            </div>
+            <span class="badge-count" id="badge-letters">4</span>
+          </div>
+
+          <!-- Character Profiles -->
+          <div class="hub-card sub-card" id="btn-hub-profiles">
+            <div class="card-icon">👑</div>
+            <div class="card-desc">
+              <h4>หอประวัติตัวละคร</h4>
+              <p>ข้อมูลลับและสิ่งที่ชอบ</p>
+            </div>
+          </div>
+
+          <!-- Endings & Memories -->
+          <div class="hub-card sub-card" id="btn-hub-gallery">
+            <div class="card-icon">🖼️</div>
+            <div class="card-desc">
+              <h4>แกลเลอรีฉากจบ</h4>
+              <p>บันทึกความทรงจำ</p>
+            </div>
+          </div>
+
+          <!-- Load Save Data -->
+          <div class="hub-card sub-card" id="btn-hub-load">
+            <div class="card-icon">💾</div>
+            <div class="card-desc">
+              <h4>จัดการเซฟ</h4>
+              <p>บันทึก / โหลดเกม</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- SCREEN 3: STORY MAP / CHAPTER TIMELINE (แผนผังเนื้อเรื่องหลัก) -->
+  <!-- ============================================================== -->
+  <div id="screen-story-tree" class="screen">
+    <div class="header-bar">
+      <button class="btn-back" data-target="screen-lobby">← กลับสู่หน้าหลัก</button>
+      <h2>ผังเส้นทางแห่งโชคชะตา (Story Chapters)</h2>
+      <button id="btn-reset-chapters" class="btn-hud" title="เริ่มผจญภัยใหม่ตั้งแต่บทนำ">🔄 เริ่มต้นใหม่</button>
+    </div>
+
+    <div class="chapter-tree-container">
+      <div class="chapter-tree-track">
+        <!-- Common Route Acts -->
+        <div class="chapter-node active" id="node-prologue" data-chapter="prologue">
+          <div class="node-badge">บทนำ (ปลดล็อกแล้ว)</div>
+          <h4>พันธนาการต่างมิติ</h4>
+          <p>การข้ามมิติสู่เอลีเซียมและเผชิญหน้ากับสี่ราชันย์</p>
+          <button class="btn-primary btn-play-chapter" data-start="prologue_modern_1" data-chapter="prologue">▶ เริ่มบทนี้</button>
+        </div>
+
+        <div class="tree-line"></div>
+
+        <div class="chapter-node locked" id="node-ch1" data-chapter="ch1">
+          <div class="node-badge">🔒 บทที่ 1</div>
+          <h4>สภาขุนนางแห่งความแคลงใจ</h4>
+          <p>เผชิญหน้ากับสายตาดูถูกและค้นหาผู้ที่ไว้วางใจ</p>
+          <button class="btn-secondary btn-play-chapter" data-start="ch1_start" data-chapter="ch1" disabled>🔒 ต้องผ่านบทนำก่อน</button>
+        </div>
+
+        <div class="tree-line"></div>
+
+        <div class="chapter-node locked" id="node-ch2" data-chapter="ch2">
+          <div class="node-badge">🔒 บทที่ 2</div>
+          <h4>งานเต้นรำหน้ากากใต้แสงจันทร์</h4>
+          <p>บทสนทนาลับและช่วงเวลาแสนหวานในมุมมืด</p>
+          <button class="btn-secondary btn-play-chapter" data-start="ch2_start" data-chapter="ch2" disabled>🔒 ต้องผ่านบทที่ 1 ก่อน</button>
+        </div>
+
+        <div class="tree-line"></div>
+
+        <div class="chapter-node locked" id="node-ch3" data-chapter="ch3">
+          <div class="node-badge">🔒 บทที่ 3</div>
+          <h4>วิกฤตคืนจันทร์สีเลือด</h4>
+          <p>อสูรเงาบุกจู่โจมและการต่อสู้ตัดสินชะตา</p>
+          <button class="btn-secondary btn-play-chapter" data-start="ch3_start" data-chapter="ch3" disabled>🔒 ต้องผ่านบทที่ 2 ก่อน</button>
+        </div>
+
+        <div class="tree-line"></div>
+
+        <div class="chapter-node branch-node locked" id="node-eval" data-chapter="eval">
+          <div class="node-badge gold">🔒 จุดเปลี่ยนแห่งโชคชะตา</div>
+          <h4>มหาพิธีเบิกเนตรแห่งดวงดารา</h4>
+          <p>ประเมินผลคะแนนความสัมพันธ์และแยกเข้าสู่รูทเฉพาะตัวละคร</p>
+          <button class="btn-secondary btn-play-chapter" data-start="route_branch_evaluation" data-chapter="eval" disabled>🔒 ต้องผ่านบทที่ 3 ก่อน</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- SCREEN 4: VISUAL NOVEL GAMEPLAY (หน้าจออ่านเนื้อเรื่องและการสนทนา) -->
+  <!-- ============================================================== -->
+  <div id="screen-game" class="screen">
+    <!-- Top HUD Bar -->
+    <div class="game-hud">
+      <div class="hud-left">
+        <button id="btn-hud-menu" class="btn-hud">☰ เมนู</button>
+        <button id="btn-hud-log" class="btn-hud">📜 ย้อนความ (Log)</button>
+        <button id="btn-hud-eye" class="btn-hud" title="ซ่อน/แสดง กรอบคำพูด">👁️ ซ่อนกรอบ</button>
+        <button id="btn-hud-auto" class="btn-hud">⏩ อัตโนมัติ (Auto)</button>
+        <button id="btn-hud-skip" class="btn-hud">⏭ ข้าม (Skip)</button>
+      </div>
+      <div class="hud-center">
+        <span id="scene-chapter-badge">บทนำ: พันธนาการต่างมิติ</span>
+      </div>
+      <div class="hud-right">
+        <div class="affection-gauge" id="hud-affection">
+          <span class="aff-label">❤️ ความผูกพัน:</span>
+          <div class="aff-bar-outer">
+            <div class="aff-bar-inner" id="aff-bar-fill" style="width: 15%;"></div>
+          </div>
+          <span id="aff-percent">15%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Character Stage (Supports 1 or 2 Cutout Transparent Sprites) -->
+    <div class="character-stage" id="character-stage">
+      <div id="active-char-sprite" class="char-sprite visible">
+        <img id="char-sprite-img" src="assets/char_cedric.png" alt="Character 1">
+        <div class="sprite-glow"></div>
+      </div>
+      <div id="second-char-sprite" class="char-sprite" style="display: none;">
+        <img id="second-char-sprite-img" src="assets/char_lucian.png" alt="Character 2">
+        <div class="sprite-glow"></div>
+      </div>
+    </div>
+
+    <!-- Hint when dialogue is hidden -->
+    <div id="dialogue-hidden-hint" class="dialogue-hidden-hint" style="display: none;">✨ แตะหน้าจอเพื่อแสดงบทพูดกลับมา</div>
+
+    <!-- Dialogue Box Area -->
+    <div class="dialogue-container">
+      <div class="dialogue-box">
+        <div class="speaker-tag" id="dialogue-speaker">เซดริก</div>
+        <div class="dialogue-text" id="dialogue-text">...</div>
+        <div class="dialogue-arrow" id="dialogue-next-indicator">▼ แตะเพื่อไปต่อ</div>
+      </div>
+
+      <!-- Choice Selection Container -->
+      <div class="choice-container" id="choice-container" style="display: none;">
+        <!-- Dynamically injected choices -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODAL: SECRET LETTERS & MESSAGES (จดหมายจากหนุ่มๆ) -->
+  <!-- ============================================================== -->
+  <div id="modal-letters" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>💌 จดหมาย & ความในใจจากสี่ราชันย์</h3>
+        <button class="modal-close" data-close="modal-letters">✕</button>
+      </div>
+      <div class="letters-tabs">
+        <button class="letter-tab active" data-char="cedric">ดยุกเซดริก</button>
+        <button class="letter-tab" data-char="lucian">ปุโรหิตลูเชียน</button>
+        <button class="letter-tab" data-char="leon">อัศวินลีออน</button>
+        <button class="letter-tab" data-char="kael">จอมโจรเคล</button>
+      </div>
+      <div class="letter-body-box" id="letter-content-display">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODAL: CHARACTER DOSSIER / PROFILES (หอประวัติตัวละคร) -->
+  <!-- ============================================================== -->
+  <div id="modal-profiles" class="modal">
+    <div class="modal-content profile-modal">
+      <div class="modal-header">
+        <h3>👑 หอประวัติและบันทึกลับแห่งสี่ราชันย์</h3>
+        <button class="modal-close" data-close="modal-profiles">✕</button>
+      </div>
+      <div class="profiles-container" id="profiles-display-wrap">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- SCREEN: MEMORY & ENDING GALLERY (แกลเลอรี) -->
+  <!-- ============================================================== -->
+  <div id="screen-gallery" class="screen">
+    <div class="header-bar">
+      <button class="btn-back" data-target="screen-lobby">← กลับสู่หน้าหลัก</button>
+      <h2>แกลเลอรีความทรงจำ & ฉากจบ (Memory Gallery)</h2>
+      <div></div>
+    </div>
+    <div class="gallery-content">
+      <div class="gallery-summary">
+        <p>บันทึกบทอวสานแห่งโชคชะตาที่คุณและเหล่าราชันย์ได้ร่วมถักทอขึ้น</p>
+      </div>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- MODAL: ROUTE EVALUATION (ประเมินชะตากรรมเพื่อเข้ารูท) -->
+  <!-- ============================================================== -->
+  <div id="modal-route-eval" class="modal">
+    <div class="modal-content eval-modal">
+      <div class="ornament">✦ ✧ ✦</div>
+      <h3 id="eval-title">ผลการประเมินสายสัมพันธ์</h3>
+      <p class="eval-subtitle">ดวงชะตาได้น้อมรับการตัดสินใจทั้งหมดของคุณ...</p>
+      
+      <div class="eval-char-showcase">
+        <div class="eval-avatar-wrap">
+          <img id="eval-char-img" src="assets/char_cedric.png" alt="Character">
+        </div>
+        <h2 id="eval-char-name">เซดริก ฟอน ราเวนครอสต์</h2>
+        <p id="eval-affinity-score" class="eval-score">ระดับความผูกพันสูงสุด: 95 คะแนน</p>
+      </div>
+
+      <div class="eval-bars-list">
+        <div class="eval-bar-row">
+          <span>เซดริก:</span>
+          <div class="bar-bg"><div id="eval-bar-cedric" class="bar-fill" style="width: 0%;"></div></div>
+          <span id="eval-val-cedric">0</span>
+        </div>
+        <div class="eval-bar-row">
+          <span>ลูเชียน:</span>
+          <div class="bar-bg"><div id="eval-bar-lucian" class="bar-fill" style="width: 0%;"></div></div>
+          <span id="eval-val-lucian">0</span>
+        </div>
+        <div class="eval-bar-row">
+          <span>ลีออน:</span>
+          <div class="bar-bg"><div id="eval-bar-leon" class="bar-fill" style="width: 0%;"></div></div>
+          <span id="eval-val-leon">0</span>
+        </div>
+        <div class="eval-bar-row">
+          <span>เคล:</span>
+          <div class="bar-bg"><div id="eval-bar-kael" class="bar-fill" style="width: 0%;"></div></div>
+          <span id="eval-val-kael">0</span>
+        </div>
+      </div>
+
+      <button id="btn-enter-route" class="btn-primary" style="margin-top: 20px; width: 100%;">
+        💖 ก้าวเข้าสู่เส้นทางเฉพาะ (Enter Route)
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- SCREEN: ENDING (ฉากจบ) -->
+  <!-- ============================================================== -->
+  <div id="screen-ending" class="screen">
+    <div class="ending-card">
+      <div class="ornament">✨ ⚜️ ✨</div>
+      <h2 id="ending-title">บทอวสานแห่งโชคชะตา</h2>
+      <h3 id="ending-type">❤️ Happy Romantic Ending</h3>
+      <div class="ending-char-photo">
+        <img id="ending-char-img" src="assets/cover.png" alt="Ending">
+      </div>
+      <p id="ending-desc" class="ending-desc">...</p>
+      <div class="ending-stats">
+        <span>ระดับความพึงพอใจของหัวใจ:</span>
+        <strong id="ending-final-score">100%</strong>
+      </div>
+      <div class="ending-actions">
+        <button id="btn-replay-route" class="btn-primary">🔄 เล่นใหม่อีกครั้ง</button>
+        <button id="btn-ending-lobby" class="btn-secondary">👑 กลับสู่หน้าหลักของเกม</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- History Log Modal -->
+  <div id="modal-log" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>📜 บันทึกบทสนทนาย้อนหลัง</h3>
+        <button class="modal-close" data-close="modal-log">✕</button>
+      </div>
+      <div class="log-body" id="log-list"></div>
+    </div>
+  </div>
+
+  <!-- In-game Menu Modal -->
+  <div id="modal-menu" class="modal">
+    <div class="modal-content small-modal">
+      <div class="modal-header">
+        <h3>เมนูเกม</h3>
+        <button class="modal-close" data-close="modal-menu">✕</button>
+      </div>
+      <div class="menu-btn-list">
+        <button id="btn-save-slot" class="btn-choice">💾 บันทึกความคืบหน้า (Save)</button>
+        <button id="btn-load-slot" class="btn-choice">📂 โหลดบันทึกล่าสุด (Load)</button>
+        <button id="btn-menu-lobby" class="btn-choice">🏰 กลับสู่ห้องโถงหลัก (Lobby)</button>
+        <button id="btn-quit-to-title" class="btn-choice danger">🚪 ออกไปยังหน้าแรก</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toast-notify" class="toast">❤️ ได้รับคะแนนความผูกพัน!</div>
+
+  <script src="audio.js"></script>
+  <script src="story.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
