@@ -86,6 +86,7 @@
           <button class="prince-tab" data-prince="lucian">ลูเชียน</button>
           <button class="prince-tab" data-prince="leon">ลีออน</button>
           <button class="prince-tab" data-prince="kael">เคล</button>
+        <button id="btn-lobby-invite-tea" class="btn-primary" style="margin-top: 12px; width: 100%; padding: 10px 16px; font-size: 0.95rem; border-radius: 20px; box-shadow: 0 4px 15px rgba(230,194,122,0.3);">🫖 ชวนจิบชาด้วยกัน (Tea Time)</button>
         </div>
       </div>
 
@@ -112,6 +113,17 @@
               <p>ความในใจจากสี่ราชันย์</p>
             </div>
             <span class="badge-count" id="badge-letters">4</span>
+          </div>
+
+          
+          <!-- Tea Time Cafe Mini-Game -->
+          <div class="hub-card sub-card" id="btn-hub-teatime" style="border: 1px solid rgba(230, 194, 122, 0.4); background: linear-gradient(135deg, rgba(30, 20, 45, 0.7), rgba(20, 14, 30, 0.9));">
+            <div class="card-icon">🫖</div>
+            <div class="card-desc">
+              <h4>ห้องน้ำชายามบ่าย</h4>
+              <p>จิบชา & ทายใจของหวาน</p>
+            </div>
+            <span class="badge-count" style="background: linear-gradient(135deg, #e6c27a, #ff4d6d); color: #0c0814; font-weight: 700;">NEW</span>
           </div>
 
           <!-- Character Profiles -->
@@ -437,6 +449,117 @@
       <div style="display: flex; gap: 10px;">
         <button id="btn-save-name" class="btn-primary" style="flex: 1; padding: 12px;">✨ บันทึกชื่อตัวเอก</button>
         <button class="btn-subtle modal-close" data-close="modal-name" style="padding: 12px 18px;">ยกเลิก</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================== -->
+  <!-- MODAL: TEA TIME MINI-GAME (ห้องน้ำชายามบ่าย)                  -->
+  <!-- ============================================================== -->
+  <div id="modal-teatime" class="modal">
+    <div class="modal-content teatime-modal">
+      <div class="modal-header">
+        <h3>🫖 ห้องน้ำชายามบ่ายแห่งเอลีเซียม (Tea Time Cafe)</h3>
+        <button class="modal-close" data-close="modal-teatime">✕</button>
+      </div>
+
+      <div class="teatime-layout">
+        <!-- Left: Prince Portrait & Speech -->
+        <div class="teatime-left">
+          <div class="teatime-char-wrap">
+            <img id="teatime-char-img" src="assets/char_cedric.png" alt="Tea Partner">
+          </div>
+          <div class="teatime-char-info">
+            <h4 id="teatime-char-name">เซดริก (Cedric)</h4>
+            <span class="teatime-affinity" id="teatime-char-affinity">❤️ ความผูกพัน: 25</span>
+          </div>
+          <div class="teatime-speech-bubble" id="teatime-speech">
+            "ชวนฉันมาดื่มชาเหรอ... ขอบใจนะ ฉันกำลังอยากพักสายตาพอดีเลย"
+          </div>
+        </div>
+
+        <!-- Right: Selection & Controls -->
+        <div class="teatime-right">
+          <!-- Step 1: Select Prince -->
+          <div class="teatime-step-section">
+            <span class="teatime-step-label">1. เลือกลำดับราชันย์ที่คุณต้องการเชิญ</span>
+            <div class="teatime-prince-selector">
+              <button class="teatime-prince-btn active" data-prince="cedric">เซดริก</button>
+              <button class="teatime-prince-btn" data-prince="lucian">ลูเชียน</button>
+              <button class="teatime-prince-btn" data-prince="leon">ลีออน</button>
+              <button class="teatime-prince-btn" data-prince="kael">เคล</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Select Tea & Dessert -->
+          <div class="teatime-step-section" id="teatime-menu-section">
+            <span class="teatime-step-label">2. เลือกเครื่องดื่มที่เขาชื่นชอบ</span>
+            <div class="teatime-item-grid" id="teatime-tea-grid">
+              <button class="teatime-item-btn active" data-item="rose_tea">
+                <span class="item-icon">🌹</span>
+                <span class="item-name">ชากุหลาบดำ</span>
+                <span class="item-desc">หอมเข้มข้น ลึกลับ</span>
+              </button>
+              <button class="teatime-item-btn" data-item="honey_tea">
+                <span class="item-icon">🍯</span>
+                <span class="item-name">ชาน้ำผึ้งดอกจันทรา</span>
+                <span class="item-desc">หวานนุ่ม ผ่อนคลาย</span>
+              </button>
+              <button class="teatime-item-btn" data-item="fruit_tea">
+                <span class="item-icon">🍊</span>
+                <span class="item-name">ชาผลไม้สุริยัน</span>
+                <span class="item-desc">สดชื่น มีชีวิตชีวา</span>
+              </button>
+              <button class="teatime-item-btn" data-item="black_coffee">
+                <span class="item-icon">☕</span>
+                <span class="item-name">กาแฟดำดริป</span>
+                <span class="item-desc">เข้มข้น ไม่หวาน</span>
+              </button>
+            </div>
+
+            <span class="teatime-step-label" style="margin-top: 14px;">3. เลือกของหวานแสนอร่อย</span>
+            <div class="teatime-item-grid" id="teatime-dessert-grid">
+              <button class="teatime-item-btn active" data-item="macaron">
+                <span class="item-icon">🍬</span>
+                <span class="item-name">มาการองกุหลาบ</span>
+                <span class="item-desc">หวานละมุน ละลายในปาก</span>
+              </button>
+              <button class="teatime-item-btn" data-item="star_cake">
+                <span class="item-icon">🍰</span>
+                <span class="item-name">เค้กดวงดาว</span>
+                <span class="item-desc">นุ่มฟู ผสมละอองดาว</span>
+              </button>
+              <button class="teatime-item-btn" data-item="croissant">
+                <span class="item-icon">🥐</span>
+                <span class="item-name">ครัวซองต์เนยสด</span>
+                <span class="item-desc">หอมเนย กรอบนอกนุ่มใน</span>
+              </button>
+              <button class="teatime-item-btn" data-item="berry_pie">
+                <span class="item-icon">🥧</span>
+                <span class="item-name">พายผลไม้ป่า</span>
+                <span class="item-desc">เปรี้ยวอมหวาน กรุบกรอบ</span>
+              </button>
+            </div>
+
+            <button id="btn-serve-tea" class="btn-primary" style="width: 100%; margin-top: 16px; padding: 12px; font-size: 1rem; border-radius: 20px;">
+              ✨ เสิร์ฟน้ำชาและของหวาน (Serve Tea)
+            </button>
+          </div>
+
+          <!-- Step 3: Interactive Topics (Appears after serving) -->
+          <div class="teatime-step-section" id="teatime-topics-section" style="display: none;">
+            <span class="teatime-step-label">💬 ชวนสนทนาเรื่องพิเศษระหว่างจิบชา</span>
+            <div class="teatime-topic-buttons" style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+              <button class="btn-choice teatime-topic-btn" data-topic="work">💼 ถามเรื่องงานและภาระหน้าที่</button>
+              <button class="btn-choice teatime-topic-btn" data-topic="love">💖 ถามเรื่องความรู้สึกที่มีต่อคุณ</button>
+              <button class="btn-choice teatime-topic-btn" data-topic="secret">🤫 ถามความลับส่วนตัวที่ไม่เคยบอกใคร</button>
+            </div>
+            <button id="btn-teatime-again" class="btn-subtle" style="width: 100%; margin-top: 14px; padding: 10px;">
+              🔄 จัดโต๊ะน้ำชาใหม่อีกรอบ
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
