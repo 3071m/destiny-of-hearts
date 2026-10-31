@@ -2205,3 +2205,182 @@ html, body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
+/* Balanced Hub Sub Grid Layout (1 wide featured banner + 2x2 grid) */
+.hub-sub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+#btn-hub-teatime {
+  grid-column: 1 / -1 !important;
+  background: linear-gradient(135deg, rgba(45, 25, 65, 0.85), rgba(25, 15, 40, 0.95)) !important;
+  border: 1px solid rgba(230, 194, 122, 0.6) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(230, 194, 122, 0.2) !important;
+  padding: 16px 20px !important;
+}
+
+#btn-hub-teatime:hover {
+  border-color: #e6c27a !important;
+  box-shadow: 0 6px 25px rgba(230, 194, 122, 0.35) !important;
+}
+
+#btn-hub-teatime .card-icon {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 10px rgba(230, 194, 122, 0.6));
+}
+
+#btn-hub-teatime .card-desc h4 {
+  font-size: 1.08rem;
+  color: #e6c27a;
+}
+
+
+/* Enhanced Lobby Responsive Grid & Balance */
+.lobby-main-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 32px;
+  flex-grow: 1;
+  align-items: center;
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 10px 20px 20px;
+}
+
+.lobby-prince-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+}
+
+.prince-cutout-wrap {
+  position: relative;
+  height: 48vh;
+  min-height: 260px;
+  max-height: 460px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.prince-quote-bubble {
+  width: 95%;
+  max-width: 420px;
+  background: rgba(20, 14, 30, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(230, 194, 122, 0.45);
+  border-radius: 16px;
+  padding: 12px 18px;
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+  font-size: 0.94rem;
+  color: #fff;
+  line-height: 1.5;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.prince-switcher {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+#btn-lobby-invite-tea {
+  max-width: 380px;
+  margin: 4px auto 0;
+}
+
+
+/* Refined Game HUD: Balanced 3-Zone Bar */
+.game-hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 120px 10px 20px;
+  background: linear-gradient(to bottom, rgba(10, 6, 18, 0.95), rgba(10, 6, 18, 0.65) 80%, transparent);
+  width: 100%;
+  z-index: 100;
+  position: relative;
+}
+
+.hud-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.hud-center {
+  flex: 1;
+  text-align: center;
+  pointer-events: none;
+}
+
+#scene-chapter-badge {
+  display: inline-block;
+  background: rgba(22, 14, 34, 0.8);
+  border: 1px solid rgba(230, 194, 122, 0.4);
+  border-radius: 20px;
+  padding: 4px 16px;
+  font-size: 0.84rem;
+  font-family: 'Kanit', sans-serif;
+  color: #e6c27a;
+  white-space: nowrap;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.hud-right {
+  flex-shrink: 0;
+}
+
+/* Tablet / iPad Portrait HUD adjustment (<= 990px) */
+@media (max-width: 990px) {
+  .game-hud {
+    padding: 8px 110px 8px 12px;
+    gap: 8px;
+  }
+  .hud-left {
+    gap: 4px;
+  }
+  .btn-hud {
+    padding: 6px 9px;
+    font-size: 0.8rem;
+  }
+  #scene-chapter-badge {
+    padding: 3px 10px;
+    font-size: 0.78rem;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Mobile HUD adjustment (<= 739px) */
+@media (max-width: 739px) {
+  .game-hud {
+    padding: 6px 90px 6px 10px;
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+  .hud-left {
+    flex-basis: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .hud-center {
+    text-align: left;
+    flex: 1;
+  }
+  .hud-right {
+    margin-left: auto;
+  }
+}
