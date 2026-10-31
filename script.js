@@ -1094,7 +1094,7 @@ class OtomeGame {
     this.logListEl.scrollTop = this.logListEl.scrollHeight;
   }
 
-    triggerEnding(endingData) {
+  triggerEnding(endingData) {
     const key = `${endingData.char || 'common'}_${endingData.type}`;
     if (!this.unlockedEndings.includes(key)) {
       this.unlockedEndings.push(key);
@@ -1140,10 +1140,19 @@ class OtomeGame {
       honorTitleEl.textContent = titles[endingData.char] || 'ยอดดวงใจแห่งเอลีเซียม';
     }
 
-    if (endingData.char && CHARACTERS[endingData.char] && CHARACTERS[endingData.char].image) {
-      imgEl.src = isTrue ? CHARACTERS[endingData.char].image.replace('.png', '_smile.png') : CHARACTERS[endingData.char].image;
-    } else {
-      imgEl.src = "assets/cover.png";
+    if (imgEl) {
+      if (isTrue && endingData.char && ['cedric', 'lucian', 'leon', 'kael'].includes(endingData.char)) {
+        imgEl.src = `assets/cg_${endingData.char}_true.jpg`;
+      } else if (endingData.char && CHARACTERS[endingData.char] && CHARACTERS[endingData.char].image) {
+        imgEl.src = CHARACTERS[endingData.char].image;
+      } else {
+        imgEl.src = "assets/cover.png";
+      }
+      imgEl.style.cursor = 'pointer';
+      imgEl.title = 'คลิกเพื่อดูภาพเต็มจอ';
+      imgEl.onclick = () => {
+        this.openImagePreview(imgEl.src, endingData.title);
+      };
     }
 
     const finalScore = endingData.char && this.affection[endingData.char] !== undefined
@@ -1164,10 +1173,10 @@ class OtomeGame {
     galleryGrid.innerHTML = "";
 
     const endingCards = [
-      { char: "cedric", title: "ราชินีแห่งราเวนครอสต์ (True End)", type: "True Romance Ending", img: "assets/char_cedric_smile.png" },
-      { char: "lucian", title: "ปุโรหิตคู่บัลลังก์ดวงดาว (True End)", type: "True Romance Ending", img: "assets/char_lucian_smile.png" },
-      { char: "leon", title: "ยอดดวงใจแห่งอัศวินสุริยัน (True End)", type: "True Romance Ending", img: "assets/char_leon_smile.png" },
-      { char: "kael", title: "คู่หูจอมโจรใต้เงาจันทร์ (True End)", type: "True Romance Ending", img: "assets/char_kael_smile.png" },
+      { char: "cedric", title: "ราชินีแห่งราเวนครอสต์ (True End)", type: "True Romance Ending", img: "assets/cg_cedric_true.jpg" },
+      { char: "lucian", title: "ปุโรหิตคู่บัลลังก์ดวงดาว (True End)", type: "True Romance Ending", img: "assets/cg_lucian_true.jpg" },
+      { char: "leon", title: "ยอดดวงใจแห่งอัศวินสุริยัน (True End)", type: "True Romance Ending", img: "assets/cg_leon_true.jpg" },
+      { char: "kael", title: "คู่หูจอมโจรใต้เงาจันทร์ (True End)", type: "True Romance Ending", img: "assets/cg_kael_true.jpg" },
       { char: "cedric", title: "ผู้พิทักษ์ในเงามืด (Normal End)", type: "Normal Ending", img: "assets/char_cedric.png" },
       { char: "lucian", title: "แสงดาวนำทาง (Normal End)", type: "Normal Ending", img: "assets/char_lucian.png" },
       { char: "leon", title: "ผู้พิทักษ์ผู้ภักดี (Normal End)", type: "Normal Ending", img: "assets/char_leon.png" },
@@ -1181,15 +1190,49 @@ class OtomeGame {
 
       const div = document.createElement('div');
       div.className = "gallery-item";
+      div.style.cursor = isUnlocked ? "pointer" : "default";
       div.innerHTML = `
         <img src="${card.img}" alt="${card.title}" style="${isUnlocked ? '' : 'filter: grayscale(100%) brightness(35%);'}">
         <div class="gallery-item-info">
           <div class="gallery-item-title">${isUnlocked ? card.title : '??? (ยังไม่ปลดล็อก)'}</div>
-          <div class="gallery-item-status">${isUnlocked ? '✨ ปลดล็อกสมบูรณ์' : '🔒 ดำเนินเนื้อเรื่องเพื่อปลดล็อก'}</div>
+          <div class="gallery-item-status">${isUnlocked ? '✨ ปลดล็อกสมบูรณ์ (คลิกเพื่อดูภาพใหญ่)' : '🔒 ดำเนินเนื้อเรื่องเพื่อปลดล็อก'}</div>
         </div>
       `;
+      if (isUnlocked) {
+        div.addEventListener('click', () => {
+          this.openImagePreview(card.img, card.title);
+        });
+      }
       galleryGrid.appendChild(div);
     });
+  }
+
+  openImagePreview(src, title) {
+    let modal = document.getElementById('cg-preview-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'cg-preview-modal';
+      modal.innerHTML = `
+        <div class="cg-modal-backdrop"></div>
+        <div class="cg-modal-content">
+          <button class="cg-modal-close" aria-label="Close">&times;</button>
+          <img id="cg-modal-img" src="" alt="CG Preview">
+          <div id="cg-modal-caption" class="cg-modal-caption"></div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+      modal.querySelector('.cg-modal-backdrop').addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+      modal.querySelector('.cg-modal-close').addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+    }
+    const img = modal.querySelector('#cg-modal-img');
+    const cap = modal.querySelector('#cg-modal-caption');
+    if (img) img.src = src;
+    if (cap) cap.textContent = title || '';
+    modal.classList.add('active');
   }
 
   saveProgress() {
@@ -1499,72 +1542,6 @@ class OtomeGame {
 
     // 4. Default in Story: Academy Daylight / Daily Routine
     window.audioManager.setTheme('daily');
-  }
-
-  // Grand Ending Trigger
-  triggerEnding(endingData) {
-    const key = `${endingData.char || 'common'}_${endingData.type}`;
-    if (!this.unlockedEndings.includes(key)) {
-      this.unlockedEndings.push(key);
-      localStorage.setItem('otome_endings', JSON.stringify(this.unlockedEndings));
-    }
-
-    const titleEl = document.getElementById('ending-title');
-    const typeEl = document.getElementById('ending-type');
-    const descEl = document.getElementById('ending-desc');
-    const imgEl = document.getElementById('ending-char-img');
-    const scoreEl = document.getElementById('ending-final-score');
-    const badgeEl = document.getElementById('ending-badge');
-    const honorTitleEl = document.getElementById('ending-title-text');
-
-    if (titleEl) titleEl.textContent = endingData.title;
-    if (typeEl) typeEl.textContent = endingData.type;
-    if (descEl) descEl.textContent = endingData.desc;
-
-    const isTrue = endingData.type.includes('True') || endingData.type.includes('แท้');
-    if (badgeEl) {
-      if (isTrue) {
-        badgeEl.textContent = '👑 TRUE ROMANCE ENDING (บทอวสานแห่งรักแท้)';
-        badgeEl.style.background = 'linear-gradient(135deg, #e6c27a, #ff4d6d)';
-      } else if (endingData.char === 'common') {
-        badgeEl.textContent = '🕊️ INDEPENDENT MAIDEN ENDING (บทอวสานอิสตรีผู้เป็นเอก)';
-        badgeEl.style.background = 'linear-gradient(135deg, #64ffda, #1de9b6)';
-      } else {
-        badgeEl.textContent = '🌸 NORMAL COMPANION ENDING (บทอวสานแห่งมิตรภาพ)';
-        badgeEl.style.background = 'linear-gradient(135deg, #ba68c8, #ab47bc)';
-      }
-    }
-
-    const titles = {
-      cedric: isTrue ? 'มกุฎราชินีคู่บัลลังก์สุริยัน (Sun Queen)' : 'สหายคู่ใจแห่งราชันย์สุริยัน',
-      lucian: isTrue ? 'มหาปราชญ์หญิงคู่บัลลังก์มนตรา (Archmage Consort)' : 'ปราชญ์ผู้ร่วมค้นคว้าแห่งหอจดหมายเหตุ',
-      leon: isTrue ? 'คู่ชีวิตแห่งแม่ทัพอัศวินองครักษ์ (Knight Champion\'s Heart)' : 'สหายศึกผู้ร่วมสาบานแห่งคมดาบ',
-      kael: isTrue ? 'แสงสว่างหนึ่งเดียวแห่งเงามืด (Moonlit Shadow Consort)' : 'ผู้กุมความลับหนึ่งเดียวขององค์ชายเงา',
-      common: 'อิสตรีผู้กำหนดโชคชะตาด้วยตนเอง (Free-Spirited Heroine)'
-    };
-
-    if (honorTitleEl) {
-      honorTitleEl.textContent = titles[endingData.char] || 'ยอดดวงใจแห่งเอลีเซียม';
-    }
-
-    if (imgEl) {
-      if (endingData.char && CHARACTERS[endingData.char] && CHARACTERS[endingData.char].image) {
-        imgEl.src = isTrue ? CHARACTERS[endingData.char].image.replace('.png', '_smile.png') : CHARACTERS[endingData.char].image;
-      } else {
-        imgEl.src = "assets/cover.png";
-      }
-    }
-
-    const finalScore = endingData.char && this.affection[endingData.char] !== undefined
-      ? this.affection[endingData.char]
-      : Math.max(...Object.values(this.affection));
-    if (scoreEl) scoreEl.textContent = `${finalScore}%`;
-
-    if (window.audioManager) {
-      window.audioManager.playHeartUp();
-      window.audioManager.setTheme(isTrue ? 'romance' : 'daily');
-    }
-    this.switchScreen('ending');
   }
 
   // Floating Hearts Animation Trigger
