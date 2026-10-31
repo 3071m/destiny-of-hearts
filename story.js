@@ -127,7 +127,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-bedroom",
+    "bg": "bg-library",
     "text": "มีเสียงพูดของชายหนุ่มดังก้องเข้ามาในหัวของคุณ...",
     "next": "pro_p1_13"
   },
@@ -135,7 +135,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-bedroom",
+    "bg": "bg-library",
     "text": "'ได้โปรดช่วยพวกเราด้วยเถอะ... ธิดาแห่งแสงดาว...'",
     "next": "pro_p1_14"
   },
@@ -143,7 +143,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: พันธนาการต่างมิติ",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-bedroom",
+    "bg": "bg-library",
     "text": "ภาพห้องนอนค่อยๆ จางหายไป กลายเป็นอุโมงค์แสงสว่างจ้า",
     "next": "pro_p1_15"
   },
@@ -527,7 +527,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: การตื่นขึ้นของพลัง",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-palace",
+    "bg": "bg-shrine",
     "text": "คุณเดินตรงไปที่แท่นคริสตัลกลางห้อง",
     "next": "pro_after_c1_3",
     "charImg": "assets/char_lucian_smile.png"
@@ -753,7 +753,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: คืนแรกในพระราชวัง",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "คนรับใช้ในวังออกมาต้อนรับและเปิดประตูห้องพักให้คุณ",
     "next": "pro_palace_walk_4",
     "charImg": "assets/char_cedric.png",
@@ -764,7 +764,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: คืนแรกในพระราชวัง",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-garden",
+    "bg": "bg-room",
     "text": "ห้องพักกว้างขวางและสะดวกสบาย มีระเบียงมองเห็นสวนดอกไม้",
     "next": "pro_palace_walk_5",
     "charImg": "assets/char_leon_smile.png",
@@ -797,7 +797,7 @@ const STORY_DATA = {
     "chapter": "บทนำ: คืนแรกในพระราชวัง",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "เมื่ออยู่คนเดียว คุณทิ้งตัวลงนอนบนเตียงนุ่มๆ แล้วเผลอหลับไปด้วยความเหนื่อย...",
     "next": "ch1_start",
     "charImg": "assets/char_cedric_smile.png",
@@ -808,7 +808,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 1: สภาขุนนาง",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "เช้าวันต่อมา แสงแดดส่องเข้ามาในห้องปลุกให้คุณตื่น",
     "next": "ch1_p1_2"
   },
@@ -816,7 +816,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 1: สภาขุนนาง",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "คุณล้างหน้าแต่งตัวด้วยชุดที่คนรับใช้เตรียมไว้ให้",
     "next": "ch1_p1_3"
   },
@@ -824,7 +824,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 1: สภาขุนนาง",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "พอเปิดประตูห้องออกมา ก็พบว่าทั้งสี่คนมายืนรอคุณอยู่หน้าห้องแล้ว!",
     "next": "ch1_p1_4"
   },
@@ -1156,7 +1156,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: งานเต้นรำหน้ากาก",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "งานเลี้ยงเต้นรำสวมหน้ากากเริ่มต้นขึ้น ห้องโถงเต็มไปด้วยแสงไฟและเสียงเพลง",
     "next": "ch2_p1_2"
   },
@@ -1164,7 +1164,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: งานเต้นรำหน้ากาก",
     "speaker": "narrator",
     "char": null,
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "คุณสวมชุดราตรีพร้อมหน้ากากเดินเข้ามาร่วมงาน",
     "next": "ch2_p1_3"
   },
@@ -1194,7 +1194,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: งานเต้นรำหน้ากาก",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "เสียงดนตรีเริ่มบรรเลงขึ้น คุณอยากไปเต้นรำกับใคร?",
     "choices": [
       {
@@ -1548,7 +1548,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "ภายในปราสาทดยุกราเวนครอสต์ถูกจัดเตรียมไว้อย่างดีและดูอบอุ่น",
     "next": "cedric_ep1_5",
     "charImg": "assets/char_cedric.png"
@@ -1566,7 +1566,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "ในห้องมีทั้งดอกไม้ หมอนนุ่มๆ และหนังสือที่คุณชอบวางเตรียมไว้",
     "next": "cedric_ep1_7",
     "charImg": "assets/char_cedric.png"
@@ -1584,7 +1584,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "คุณยิ้มขอบคุณในความใส่ใจ ก่อนที่เขาจะพาคุณไปนั่งพักที่โซฟา",
     "next": "cedric_ep1_9",
     "charImg": "assets/char_cedric_smile.png"
@@ -1602,7 +1602,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "สักพัก เซดริกก็นำชาร้อนกับขนมมาเสิร์ฟให้คุณ",
     "next": "cedric_ep1_11",
     "charImg": "assets/char_cedric.png"
@@ -1620,7 +1620,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "ขนมอร่อยมากจนคุณเผลอยิ้มออกมา",
     "next": "cedric_ep1_13",
     "charImg": "assets/char_cedric_smile.png"
@@ -1647,7 +1647,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "สัมผัสจากมือเขาทำให้คุณรู้สึกใจเต้นขึ้นมา",
     "next": "cedric_ep1_16",
     "charImg": "assets/char_cedric.png"
@@ -1674,7 +1674,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "เขาขยับเข้ามานั่งข้างๆ คุณจนไหล่ชนกัน",
     "next": "cedric_ep1_19",
     "charImg": "assets/char_cedric.png"
@@ -1692,7 +1692,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "เขามองหน้าคุณตรงๆ เพื่อรอฟังคำตอบ",
     "next": "cedric_ep1_21",
     "charImg": "assets/char_cedric.png"
@@ -1710,7 +1710,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "ลมพัดเข้ามาเบาๆ ทางหน้าต่าง มีกลิ่นหอมจางๆ ลอยมาแตะจมูก",
     "next": "cedric_ep1_23",
     "charImg": "assets/char_cedric.png"
@@ -1759,7 +1759,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: ความอบอุ่นใจ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "เขาดึงคุณเข้าไปกอดไว้ ได้ยินเสียงหัวใจเขาเต้นชัดเจน",
     "next": "cedric_ep1_good_3",
     "charImg": "assets/char_cedric_blush.png"
@@ -1777,7 +1777,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: ความอบอุ่นใจ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "คุณทั้งสองคนนั่งคุยกันเพลินจนถึงช่วงเย็น",
     "next": "cedric_ep2_1",
     "charImg": "assets/char_cedric_smile.png"
@@ -1795,7 +1795,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: ความน้อยใจ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "เขาพยักหน้ารับอย่างเงียบๆ แล้วเดินไปเก็บถ้วยชา",
     "next": "cedric_ep1_bad_3",
     "charImg": "assets/char_cedric_smile.png"
@@ -1813,7 +1813,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: ความน้อยใจ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "บรรยากาศในห้องเงียบลงเล็กน้อย ก่อนจะหมดวันแรก",
     "next": "cedric_ep2_1",
     "charImg": "assets/char_cedric.png"
@@ -2359,7 +2359,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คืนหนึ่งฝนตกหนักและมีเสียงฟ้าร้องดังไปทั่ว",
     "next": "cedric_ep4_2",
     "charImg": "assets/char_cedric.png"
@@ -2368,7 +2368,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "ด้วยความเป็นห่วง คุณจึงเดินไปดูที่ห้องของเซดริก และเห็นเขายืนมองหน้าต่างอยู่คนเดียว",
     "next": "cedric_ep4_sub_1",
     "charImg": "assets/char_cedric.png"
@@ -2395,7 +2395,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คุณเดินเข้าไปจับมือเขา พบว่ามือของเขาเย็นเฉียบ",
     "next": "cedric_ep4_6",
     "charImg": "assets/char_cedric.png"
@@ -2422,7 +2422,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คุณชวนเขามานั่งข้างเตาผิงเพื่อคุยกัน",
     "next": "cedric_ep4_9",
     "charImg": "assets/char_cedric.png"
@@ -2440,7 +2440,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "เขาเริ่มเล่าเรื่องในอดีตที่เก็บไว้ในใจให้คุณฟัง",
     "next": "cedric_ep4_11",
     "charImg": "assets/char_cedric.png"
@@ -2507,7 +2507,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 4: อ้อมกอดที่เยียวยา",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "คืนนั้นคุณกับเขานั่งคุยกันข้างเตาผิงจนเผลอหลับไป",
     "next": "cedric_ep5_1",
     "charImg": "assets/char_cedric_smile.png"
@@ -2525,7 +2525,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 4: บาดแผลในใจ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "คุณเดินกลับห้องพักไป ปล่อยให้เขานั่งอยู่คนเดียว",
     "next": "cedric_ep5_1",
     "charImg": "assets/char_cedric.png"
@@ -3678,7 +3678,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คืนหนึ่งฝนตกหนักและมีเสียงฟ้าร้องดังไปทั่ว",
     "next": "lucian_ep4_2",
     "charImg": "assets/char_lucian.png"
@@ -3687,7 +3687,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "ด้วยความเป็นห่วง คุณจึงเดินไปดูที่ห้องของลูเชียน และเห็นเขายืนมองหน้าต่างอยู่คนเดียว",
     "next": "lucian_ep4_sub_1",
     "charImg": "assets/char_lucian.png"
@@ -3714,7 +3714,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คุณเดินเข้าไปจับมือเขา พบว่ามือของเขาเย็นเฉียบ",
     "next": "lucian_ep4_6",
     "charImg": "assets/char_lucian.png"
@@ -3741,7 +3741,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คุณชวนเขามานั่งข้างเตาผิงเพื่อคุยกัน",
     "next": "lucian_ep4_9",
     "charImg": "assets/char_lucian.png"
@@ -3759,7 +3759,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "เขาเริ่มเล่าเรื่องในอดีตที่เก็บไว้ในใจให้คุณฟัง",
     "next": "lucian_ep4_11",
     "charImg": "assets/char_lucian.png"
@@ -3826,7 +3826,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 4: อ้อมกอดที่เยียวยา",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-shrine",
+    "bg": "bg-room",
     "text": "คืนนั้นคุณกับเขานั่งคุยกันข้างเตาผิงจนเผลอหลับไป",
     "next": "lucian_ep5_1",
     "charImg": "assets/char_lucian_smile.png"
@@ -3844,7 +3844,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 4: บาดแผลในใจ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "คุณเดินกลับห้องพักไป ปล่อยให้เขานั่งอยู่คนเดียว",
     "next": "lucian_ep5_1",
     "charImg": "assets/char_lucian.png"
@@ -3920,7 +3920,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 5: ชัยชนะแห่งรักแท้",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-shrine",
     "text": "ลูเชียนอัญเชิญแสงแห่งดวงดาวมาเป็นพยานกลางวิหาร ยืนยันความรักที่บริสุทธิ์ของเขากับคุณ",
     "next": "lucian_ep5_good_1_ext_1",
     "charImg": "assets/char_lucian_blush.png"
@@ -3956,7 +3956,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 5: การปกป้องเพียงลำพัง",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-shrine",
     "text": "ลูเชียนกุมมือคุณไว้ 'เราจะผ่านเรื่องนี้ไปด้วยกัน ไม่ต้องกังวลนะ'",
     "next": "lucian_ep5_bad_1_ext_1",
     "charImg": "assets/char_lucian.png"
@@ -4997,7 +4997,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คืนหนึ่งฝนตกหนักและมีเสียงฟ้าร้องดังไปทั่ว",
     "next": "leon_ep4_2",
     "charImg": "assets/char_leon.png"
@@ -5006,7 +5006,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "ด้วยความเป็นห่วง คุณจึงเดินไปดูที่ห้องของลีออน และเห็นเขายืนมองหน้าต่างอยู่คนเดียว",
     "next": "leon_ep4_sub_1",
     "charImg": "assets/char_leon.png"
@@ -5033,7 +5033,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คุณเดินเข้าไปจับมือเขา พบว่ามือของเขาเย็นเฉียบ",
     "next": "leon_ep4_6",
     "charImg": "assets/char_leon.png"
@@ -5060,7 +5060,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คุณชวนเขามานั่งข้างเตาผิงเพื่อคุยกัน",
     "next": "leon_ep4_9",
     "charImg": "assets/char_leon.png"
@@ -5078,7 +5078,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "เขาเริ่มเล่าเรื่องในอดีตที่เก็บไว้ในใจให้คุณฟัง",
     "next": "leon_ep4_11",
     "charImg": "assets/char_leon.png"
@@ -5145,7 +5145,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 4: อ้อมกอดที่เยียวยา",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "คืนนั้นคุณกับเขานั่งคุยกันข้างเตาผิงจนเผลอหลับไป",
     "next": "leon_ep5_1",
     "charImg": "assets/char_leon_smile.png"
@@ -5163,7 +5163,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 4: บาดแผลในใจ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "คุณเดินกลับห้องพักไป ปล่อยให้เขานั่งอยู่คนเดียว",
     "next": "leon_ep5_1",
     "charImg": "assets/char_leon.png"
@@ -6316,7 +6316,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คืนหนึ่งฝนตกหนักและมีเสียงฟ้าร้องดังไปทั่ว",
     "next": "kael_ep4_2",
     "charImg": "assets/char_kael.png"
@@ -6325,7 +6325,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "ด้วยความเป็นห่วง คุณจึงเดินไปดูที่ห้องของเคล และเห็นเขายืนมองหน้าต่างอยู่คนเดียว",
     "next": "kael_ep4_sub_1",
     "charImg": "assets/char_kael.png"
@@ -6352,7 +6352,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คุณเดินเข้าไปจับมือเขา พบว่ามือของเขาเย็นเฉียบ",
     "next": "kael_ep4_6",
     "charImg": "assets/char_kael.png"
@@ -6379,7 +6379,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คุณชวนเขามานั่งข้างเตาผิงเพื่อคุยกัน",
     "next": "kael_ep4_9",
     "charImg": "assets/char_kael.png"
@@ -6397,7 +6397,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "เขาเริ่มเล่าเรื่องในอดีตที่เก็บไว้ในใจให้คุณฟัง",
     "next": "kael_ep4_11",
     "charImg": "assets/char_kael.png"
@@ -6464,7 +6464,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 4: อ้อมกอดที่เยียวยา",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คืนนั้นคุณกับเขานั่งคุยกันข้างเตาผิงจนเผลอหลับไป",
     "next": "kael_ep5_1",
     "charImg": "assets/char_kael_smile.png"
@@ -6482,7 +6482,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 4: บาดแผลในใจ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-palace",
+    "bg": "bg-room",
     "text": "คุณเดินกลับห้องพักไป ปล่อยให้เขานั่งอยู่คนเดียว",
     "next": "kael_ep5_1",
     "charImg": "assets/char_kael.png"
@@ -6828,7 +6828,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-library",
     "text": "คุณหยิบหนังสือเล่มหนึ่งขึ้นมาดู พบว่ามีที่คั่นหนังสือรูปกุหลาบดำคั่นอยู่",
     "next": "cedric_ep1_sub_4",
     "charImg": "assets/char_cedric.png"
@@ -6846,7 +6846,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-library",
     "text": "คุณแอบยิ้มขำที่เห็นท่านดยุกผู้เคร่งขรึมเขินเพราะหนังสือบทกวี",
     "next": "cedric_ep1_sub_6",
     "charImg": "assets/char_cedric_smile.png"
@@ -6864,7 +6864,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-library",
     "text": "เขาเดินเข้ามาใกล้แล้วแกล้งยีหัวคุณเบาๆ",
     "next": "cedric_ep1_sub_8",
     "charImg": "assets/char_cedric.png"
@@ -6882,7 +6882,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 1: โลกของเราสองคน",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-library",
     "text": "แม้จะทำท่าเหมือนดุ แต่สายตาของเขากลับดูใจดีมาก",
     "next": "cedric_ep1_sub_10",
     "charImg": "assets/char_cedric_smile.png"
@@ -7260,7 +7260,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "เขายกมือขึ้นลูบแก้มคุณเบาๆ ด้วยสายตาขอบคุณ",
     "next": "cedric_ep4_sub_4",
     "charImg": "assets/char_cedric.png"
@@ -7278,7 +7278,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คุณขยับเข้าไปกอดเขาไว้ เพื่อให้ความอบอุ่นแก่กัน",
     "next": "cedric_ep4_sub_6",
     "charImg": "assets/char_cedric.png"
@@ -7305,7 +7305,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "เขาดึงผ้าห่มมาคลุมไหล่ให้คุณอย่างใส่ใจ",
     "next": "cedric_ep4_sub_9",
     "charImg": "assets/char_cedric.png"
@@ -7323,7 +7323,7 @@ const STORY_DATA = {
     "chapter": "รูทเซดริก บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "ท่ามกลางเสียงฝน คุณรู้สึกปลอดภัยเมื่ออยู่ข้างๆ เซดริก",
     "next": "cedric_ep4_3",
     "charImg": "assets/char_cedric.png"
@@ -7944,7 +7944,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "เขายกมือขึ้นลูบผมคุณเบาๆ ด้วยแววตาที่เต็มไปด้วยความซาบซึ้ง",
     "next": "lucian_ep4_sub_4",
     "charImg": "assets/char_lucian_smile.png"
@@ -7962,7 +7962,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คุณขยับเข้าไปกอดปลอบเขาไว้",
     "next": "lucian_ep4_sub_6",
     "charImg": "assets/char_lucian_blush.png"
@@ -7989,7 +7989,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "เขาดึงผ้าห่มมาคลุมให้คุณอย่างอบอุ่น",
     "next": "lucian_ep4_sub_9",
     "charImg": "assets/char_lucian_blush.png"
@@ -8007,7 +8007,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "ในคืนฝนตก การมีลูเชียนอยู่ข้างๆ ทำให้คุณรู้สึกอุ่นใจ",
     "next": "lucian_ep4_3",
     "charImg": "assets/char_lucian.png"
@@ -8034,7 +8034,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-shrine",
     "text": "เมื่อเดินเข้าสู่วิหาร สายตาของนักบวชทุกคนต่างมองมาที่คุณกับลูเชียน",
     "next": "lucian_ep5_sub_4",
     "charImg": "assets/char_lucian.png"
@@ -8052,7 +8052,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-shrine",
     "text": "พลังเวทแสงดาวของลูเชียนทำให้ทุกคนในวิหารต้องยอมรับในปาฏิหาริย์",
     "next": "lucian_ep5_sub_6",
     "charImg": "assets/char_lucian.png"
@@ -8070,7 +8070,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-shrine",
     "text": "กฎโบราณที่ห้ามมหาปุโรหิตมีความรักถูกยกเลิกในที่สุด!",
     "next": "lucian_ep5_sub_8",
     "charImg": "assets/char_lucian_blush.png"
@@ -8079,7 +8079,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "lucian",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-shrine",
     "text": "ลูเชียนหันมากอดคุณกลางลานวิหารท่ามกลางเสียงโห่ร้องยินดีของเหล่านักบวชฝึกหัด",
     "next": "lucian_ep5_sub_9",
     "charImg": "assets/char_lucian_blush.png"
@@ -8097,7 +8097,7 @@ const STORY_DATA = {
     "chapter": "รูทลูเชียน บทที่ 5: บททดสอบครั้งสุดท้าย",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-garden",
+    "bg": "bg-shrine",
     "text": "ทุกคนในวิหารต่างโค้งคำนับยินดีให้กับความรักของคุณทั้งสองคน",
     "next": "lucian_ep5_3",
     "charImg": "assets/char_lucian_smile.png"
@@ -8628,7 +8628,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "เขามองคุณด้วยสายตาที่เต็มไปด้วยความซาบซึ้งใจ",
     "next": "leon_ep4_sub_4",
     "charImg": "assets/char_leon.png"
@@ -8646,7 +8646,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "leon",
     "char": "leon",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "'คุณใจดีกับผมเหลือเกินครับ... คุณเป็นคนแรกที่ทำให้ผมภูมิใจในตัวเองจากใจจริง'",
     "next": "leon_ep4_sub_6",
     "charImg": "assets/char_leon_blush.png"
@@ -8673,7 +8673,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "เขากระชับผ้าห่มคลุมไหล่ให้คุณอย่างอบอุ่น",
     "next": "leon_ep4_sub_9",
     "charImg": "assets/char_leon.png"
@@ -8691,7 +8691,7 @@ const STORY_DATA = {
     "chapter": "รูทลีออน บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "ความซื่อตรงของลีออนทำให้คุณรู้สึกอบอุ่นหัวใจเสมอ",
     "next": "leon_ep4_3",
     "charImg": "assets/char_leon.png"
@@ -9312,7 +9312,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "เขามองคุณด้วยสายตาที่อ่อนโยนลงกว่าทุกที",
     "next": "kael_ep4_sub_4",
     "charImg": "assets/char_kael.png"
@@ -9330,7 +9330,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "คุณขยับเข้าไปกุมมือเขาไว้ เพื่อบอกว่าเขาไม่ได้อยู่คนเดียว",
     "next": "kael_ep4_sub_6",
     "charImg": "assets/char_kael.png"
@@ -9357,7 +9357,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "เขาดึงผ้าห่มมาคลุมตัวคุณไว้อย่างใส่ใจ",
     "next": "kael_ep4_sub_9",
     "charImg": "assets/char_kael_blush.png"
@@ -9375,7 +9375,7 @@ const STORY_DATA = {
     "chapter": "รูทเคล บทที่ 4: ความลับในคืนฝนพรำ",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-night",
+    "bg": "bg-room",
     "text": "ถึงข้างนอกจะมีพายุ แต่ข้างในกลับอบอุ่นเมื่อมีเคลอยู่ใกล้ๆ",
     "next": "kael_ep4_3",
     "charImg": "assets/char_kael.png"
@@ -11059,7 +11059,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับเซดริก",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "เวลาอยู่กันสองคน เซดริกดูอ่อนโยนและใจดีขึ้นมาก",
     "next": "ch2_c1_cedric_ext_3",
     "charImg": "assets/char_cedric.png"
@@ -11077,7 +11077,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับเซดริก",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "เขาเอื้อมมือมาช่วยจัดผมที่ปรกหน้าของคุณให้เบาๆ",
     "next": "ch2_c1_cedric_ext_5",
     "charImg": "assets/char_cedric.png"
@@ -11117,7 +11117,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับเซดริก",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "คุณแอบยิ้มขำเมื่อเห็นเซดริกพยายามเก๊กขรึมแก้เขิน",
     "next": "ch2_c1_cedric_ext_9",
     "charImg": "assets/char_cedric_blush.png"
@@ -11135,7 +11135,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับเซดริก",
     "speaker": "narrator",
     "char": "cedric",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "คุณพยักหน้ารับด้วยความสบายใจ",
     "next": "ch2_garden_1",
     "charImg": "assets/char_cedric.png"
@@ -11153,7 +11153,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับลูเชียน",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "ละอองแสงเวทมนตร์ลอยวนรอบนิ้วมือของเขาเบาๆ",
     "next": "ch2_c1_lucian_ext_3",
     "charImg": "assets/char_lucian.png"
@@ -11171,7 +11171,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับลูเชียน",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "ลูเชียนก้มลงมากระซิบข้างหูคุณเบาๆ",
     "next": "ch2_c1_lucian_ext_5",
     "charImg": "assets/char_lucian_blush.png"
@@ -11211,7 +11211,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับลูเชียน",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "คุณหัวเราะให้กับความขี้เล่นของลูเชียน",
     "next": "ch2_c1_lucian_ext_9",
     "charImg": "assets/char_lucian_smile.png"
@@ -11229,7 +11229,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับลูเชียน",
     "speaker": "narrator",
     "char": "lucian",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "รอยยิ้มของลูเชียนทำเอาคุณแอบเขินขึ้นมา",
     "next": "ch2_garden_1",
     "charImg": "assets/char_lucian.png"
@@ -11247,7 +11247,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับลีออน",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "ลีออนรีบขยับมายืนข้างๆ คุณด้วยท่าทางประหม่าเล็กน้อย",
     "next": "ch2_c1_leon_ext_3",
     "charImg": "assets/char_leon.png"
@@ -11265,7 +11265,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับลีออน",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "ลีออนหยิบพัดอันเล็กออกมาช่วยพัดให้คุณอย่างใส่ใจ",
     "next": "ch2_c1_leon_ext_5",
     "charImg": "assets/char_leon.png"
@@ -11305,7 +11305,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับลีออน",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "คุณรับลูกอมจากมือลีออนมาชิม รสชาติหวานอร่อยดี",
     "next": "ch2_c1_leon_ext_9",
     "charImg": "assets/char_leon.png"
@@ -11323,7 +11323,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับลีออน",
     "speaker": "narrator",
     "char": "leon",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "ความเป็นกันเองและจริงใจของลีออนทำให้คุณยิ้มได้เสมอ",
     "next": "ch2_garden_1",
     "charImg": "assets/char_leon_smile.png"
@@ -11341,7 +11341,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับเคล",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "เคลเดินเข้ามาใกล้แล้วก้มมองสบตาคุณตรงๆ",
     "next": "ch2_c1_kael_ext_3",
     "charImg": "assets/char_kael.png"
@@ -11359,7 +11359,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับเคล",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "เขาดีดนิ้วเสกดอกกุหลาบแดงขึ้นมาแล้วยื่นให้คุณ",
     "next": "ch2_c1_kael_ext_5",
     "charImg": "assets/char_kael.png"
@@ -11399,7 +11399,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับเคล",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "คุณรับดอกกุหลาบมาไว้พลางอมยิ้มกับท่าทางภูมิใจของเขา",
     "next": "ch2_c1_kael_ext_9",
     "charImg": "assets/char_kael.png"
@@ -11417,7 +11417,7 @@ const STORY_DATA = {
     "chapter": "บทที่ 2: ฟลอร์เต้นรำกับเคล",
     "speaker": "narrator",
     "char": "kael",
-    "bg": "bg-palace",
+    "bg": "bg-ballroom",
     "text": "แม้จะชอบกวนประสาท แต่เคลก็คอยดูแลคุณดีเสมอ",
     "next": "ch2_garden_1",
     "charImg": "assets/char_kael.png"
