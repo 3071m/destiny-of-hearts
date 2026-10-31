@@ -166,7 +166,11 @@ class OtomeGame {
     // Audio toggles
     document.getElementById('bgm-toggle-btn').addEventListener('click', (e) => {
       e.stopPropagation();
-      window.audioManager.toggleBgm();
+      const enabled = window.audioManager.toggleBgm();
+      if (enabled && window.audioManager.themes) {
+        const theme = window.audioManager.themes[window.audioManager.currentTheme];
+        this.showToast(`🎵 กำลังเล่น: ${theme?.nameTh || 'ดนตรีบรรเลง'}`);
+      }
     });
     document.getElementById('sfx-toggle-btn').addEventListener('click', (e) => {
       e.stopPropagation();
@@ -177,7 +181,6 @@ class OtomeGame {
     document.getElementById('btn-tap-start').addEventListener('click', () => {
       window.audioManager.init();
       window.audioManager.playHeartUp();
-    this.triggerFloatingHeart(characterKey, points);
       this.switchScreen('lobby');
     });
 
@@ -360,6 +363,13 @@ class OtomeGame {
         const modalId = btn.dataset.close;
         const el = document.getElementById(modalId);
         if (el) el.classList.remove('active');
+        if (modalId === 'modal-teatime') {
+          if (this.screens.game && this.screens.game.classList.contains('active')) {
+            this.updateBgmForCurrentScene();
+          } else if (window.audioManager) {
+            window.audioManager.setTheme('title');
+          }
+        }
       });
     });
 
@@ -564,6 +574,11 @@ class OtomeGame {
     }
     if (screenName === 'game') {
       requestAnimationFrame(() => this.fitStage());
+      this.updateBgmForCurrentScene();
+    } else {
+      if (window.audioManager) {
+        window.audioManager.setTheme('title');
+      }
     }
   }
 
@@ -643,6 +658,7 @@ class OtomeGame {
       return;
     }
     this.currentSceneId = sceneId;
+    this.updateBgmForScene(sceneId, scene);
 
     // Auto-unlock chapters when reached through gameplay
     if (sceneId === "ch1_start") this.unlockChapter("ch1");
