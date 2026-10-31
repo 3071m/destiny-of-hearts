@@ -191,10 +191,25 @@ class OtomeGame {
       btnContinue.addEventListener('click', () => {
         window.audioManager.init();
         window.audioManager.playChoice();
-        const loaded = this.loadAutoSave() || this.loadProgress();
-        if (!loaded) {
-          this.showToast("ยังไม่มีข้อมูลบันทึก เริ่มเรื่องราวใหม่กันเลย!", false);
-          this.startStory("prologue_modern_1");
+        const latest = this.getLatestSaveData();
+        if (latest && latest.sceneId && STORY_DATA[latest.sceneId]) {
+          this.currentSceneId = latest.sceneId;
+          this.currentRoute = latest.currentRoute;
+          this.affection = latest.affection || { cedric: 0, lucian: 0, leon: 0, kael: 0 };
+          this.historyLog = latest.historyLog || [];
+          this.playerName = latest.playerName || "เรเนีย";
+          if (Array.isArray(latest.unlockedChapters)) {
+            this.unlockedChapters = latest.unlockedChapters;
+          }
+          this.switchScreen('game');
+          this.renderScene(this.currentSceneId);
+          this.showToast(`▶️ อ่านต่อ: ${latest.chapterTitle || latest.chapter || 'จุดล่าสุด'}`);
+        } else {
+          const loaded = this.loadAutoSave() || this.loadProgress();
+          if (!loaded) {
+            this.showToast("ยังไม่มีข้อมูลบันทึก เริ่มเรื่องราวใหม่กันเลย!", false);
+            this.startStory("prologue_modern_1");
+          }
         }
       });
     }
@@ -504,22 +519,56 @@ class OtomeGame {
     }
 
     
-    // In-game menu actions
-    document.getElementById('btn-save-slot').addEventListener('click', () => {
-      this.saveProgress();
-      this.modalMenu.classList.remove('active');
-      this.showToast("💾 บันทึกความคืบหน้าเรียบร้อยแล้ว!");
-    });
+    // In-game menu actions -> Multi-slot Save & Load
+    const btnSaveSlot = document.getElementById('btn-save-slot');
+    if (btnSaveSlot) {
+      btnSaveSlot.addEventListener('click', () => {
+        if (this.modalMenu) this.modalMenu.classList.remove('active');
+        this.openSlotsModal('save');
+      });
+    }
 
-    document.getElementById('btn-load-slot').addEventListener('click', () => {
-      const loaded = this.loadProgress();
-      this.modalMenu.classList.remove('active');
-      if (loaded) {
-        this.showToast("📂 โหลดความคืบหน้าสำเร็จ!");
-      } else {
-        this.showToast("⚠️ ไม่พบข้อมูลบันทึก");
-      }
-    });
+    const btnLoadSlot = document.getElementById('btn-load-slot');
+    if (btnLoadSlot) {
+      btnLoadSlot.addEventListener('click', () => {
+        if (this.modalMenu) this.modalMenu.classList.remove('active');
+        this.openSlotsModal('load');
+      });
+    }
+
+    // Title & Lobby Save Slots Buttons
+    const btnTitleSlots = document.getElementById('btn-title-slots');
+    if (btnTitleSlots) {
+      btnTitleSlots.addEventListener('click', () => {
+        window.audioManager.playChoice();
+        this.openSlotsModal('load');
+      });
+    }
+
+    const btnHubSlots = document.getElementById('btn-hub-slots');
+    if (btnHubSlots) {
+      btnHubSlots.addEventListener('click', () => {
+        window.audioManager.playChoice();
+        this.openSlotsModal('load');
+      });
+    }
+
+    // Slots Mode Tabs
+    const tabSlotsSave = document.getElementById('tab-slots-save');
+    if (tabSlotsSave) {
+      tabSlotsSave.addEventListener('click', () => {
+        window.audioManager.playClick();
+        this.switchSlotsTab('save');
+      });
+    }
+
+    const tabSlotsLoad = document.getElementById('tab-slots-load');
+    if (tabSlotsLoad) {
+      tabSlotsLoad.addEventListener('click', () => {
+        window.audioManager.playClick();
+        this.switchSlotsTab('load');
+      });
+    }
 
     document.getElementById('btn-menu-lobby').addEventListener('click', () => {
       this.modalMenu.classList.remove('active');
@@ -1563,6 +1612,296 @@ class OtomeGame {
     }, 1500);
   }
 
+
+
+// =========================================================================
+  // MULTI-SLOT SAVE / LOAD SYSTEM (3 SLOTS)
+  // =========================================================================
+  openSlotsModal(mode = 'save') {
+    this.slotsMode = mode;
+    const modal = document.getElementById('modal-slots');
+    if (!modal) return;
+
+    this.switchSlotsTab(mode);
+    modal.classList.add('active');
+  }
+
+  switchSlotsTab(mode) {
+    this.slotsMode = mode;
+    const tabSave = document.getElementById('tab-slots-save');
+    const tabLoad = document.getElementById('tab-slots-load');
+    const titleEl = document.getElementById('slots-modal-title');
+
+    const canSave = Boolean(this.currentSceneId && this.currentSceneId !== 'title' && STORY_DATA[this.currentSceneId]);
+
+    if (tabSave) {
+      if (mode === 'save') {
+        tabSave.classList.add('active');
+      } else {
+        tabSave.classList.remove('active');
+      }
+      if (!canSave) {
+        tabSave.classList.add('disabled');
+        tabSave.title = "ต้องอยู่ในระหว่างเล่นเนื้อเรื่องจึงจะบันทึกได้";
+      } else {
+        tabSave.classList.remove('disabled');
+        tabSave.title = "";
+      }
+    }
+
+    if (tabLoad) {
+      if (mode === 'load') {
+        tabLoad.classList.add('active');
+      } else {
+        tabLoad.classList.remove('active');
+      }
+    }
+
+    if (titleEl) {
+      titleEl.innerHTML = mode === 'save'
+        ? '💾 บันทึกความคืบหน้า (Save 3 ช่อง)'
+        : '📂 โหลดความคืบหน้า (Load 3 ช่อง)';
+    }
+
+    this.renderSlotsUI();
+  }
+
+  renderSlotsUI() {
+    const listEl = document.getElementById('slots-card-list');
+    if (!listEl) return;
+    listEl.innerHTML = '';
+
+    const canSave = Boolean(this.currentSceneId && this.currentSceneId !== 'title' && STORY_DATA[this.currentSceneId]);
+
+    for (let slotId = 1; slotId <= 3; slotId++) {
+      const slotData = this.getSlotData(slotId);
+      const card = document.createElement('div');
+      card.className = `slot-card ${slotData ? 'active-slot' : 'empty-slot'}`;
+
+      if (slotData) {
+        const thumb = slotData.charThumb || 'assets/cover.png';
+        const speaker = slotData.speaker ? `${slotData.speaker}: ` : '';
+        const snippet = slotData.textSnippet ? `"${speaker}${slotData.textSnippet}"` : 'บันทึกเรื่องราว';
+        
+        let affPills = '';
+        if (slotData.affection) {
+          const charNames = { cedric: '👑 เซดริก', lucian: '🔮 ลูเชียน', leon: '⚔️ ลีออน', kael: '🌙 เคล' };
+          for (const [c, val] of Object.entries(slotData.affection)) {
+            if (val > 0) {
+              affPills += `<span class="aff-pill">${charNames[c] || c} ${val}%</span>`;
+            }
+          }
+        }
+        if (!affPills) {
+          affPills = `<span class="aff-pill" style="opacity:0.6;">ยังไม่มีคะแนนใจ</span>`;
+        }
+
+        const isSaveMode = this.slotsMode === 'save';
+
+        card.innerHTML = `
+          <div class="slot-thumb-wrap">
+            <img src="${thumb}" class="slot-thumb-img" alt="Slot ${slotId}">
+            <span class="slot-number-badge">ช่องที่ ${slotId}</span>
+          </div>
+          <div class="slot-details">
+            <div class="slot-row-top">
+              <span class="slot-chapter-name">${slotData.chapterTitle || 'บันทึกการเดินทาง'}</span>
+              <span class="slot-time-text">📅 ${slotData.savedAt}</span>
+            </div>
+            <div class="slot-snippet-text">${snippet}</div>
+            <div class="slot-affection-pills">${affPills}</div>
+          </div>
+          <div class="slot-actions">
+            ${isSaveMode ? `
+              <button class="btn-slot-action primary btn-do-save" ${canSave ? '' : 'disabled'}>💾 บันทึกทับ</button>
+            ` : `
+              <button class="btn-slot-action load-action btn-do-load">📂 โหลดเล่นต่อ</button>
+            `}
+            <button class="btn-slot-delete btn-do-delete" title="ลบข้อมูลในช่องนี้">🗑️ ลบ</button>
+          </div>
+        `;
+
+        const btnSave = card.querySelector('.btn-do-save');
+        if (btnSave) {
+          btnSave.addEventListener('click', () => {
+            window.audioManager.playClick();
+            this.saveToSlot(slotId);
+          });
+        }
+
+        const btnLoad = card.querySelector('.btn-do-load');
+        if (btnLoad) {
+          btnLoad.addEventListener('click', () => {
+            window.audioManager.playChoice();
+            this.loadFromSlot(slotId);
+          });
+        }
+
+        const btnDel = card.querySelector('.btn-do-delete');
+        if (btnDel) {
+          btnDel.addEventListener('click', () => {
+            window.audioManager.playClick();
+            if (confirm(`คุณต้องการลบข้อมูลในช่องที่ ${slotId} ใช่หรือไม่?`)) {
+              this.deleteSlot(slotId);
+            }
+          });
+        }
+      } else {
+        // Empty slot
+        const isSaveMode = this.slotsMode === 'save';
+        card.innerHTML = `
+          <div class="slot-thumb-wrap empty-thumb">
+            <span class="slot-empty-icon">📁</span>
+            <span class="slot-number-badge">ช่องที่ ${slotId}</span>
+          </div>
+          <div class="slot-details empty-details">
+            <div class="slot-empty-title">ช่องบันทึกว่างเปล่า (Empty Slot)</div>
+            <div class="slot-empty-sub">${isSaveMode ? 'คลิกเพื่อบันทึกความคืบหน้าลงช่องนี้' : 'ยังไม่มีข้อมูลบันทึกในช่องนี้'}</div>
+          </div>
+          <div class="slot-actions">
+            ${isSaveMode ? `
+              <button class="btn-slot-action primary btn-do-save" ${canSave ? '' : 'disabled'}>💾 บันทึกลงช่องนี้</button>
+            ` : `
+              <button class="btn-slot-action disabled" disabled>ว่างเปล่า</button>
+            `}
+          </div>
+        `;
+
+        const btnSave = card.querySelector('.btn-do-save');
+        if (btnSave) {
+          btnSave.addEventListener('click', () => {
+            window.audioManager.playClick();
+            this.saveToSlot(slotId);
+          });
+        }
+      }
+
+      listEl.appendChild(card);
+    }
+  }
+
+  saveToSlot(slotId) {
+    if (!this.currentSceneId || this.currentSceneId === 'title' || !STORY_DATA[this.currentSceneId]) {
+      this.showToast("⚠️ ต้องอยู่ในระหว่างเล่นเนื้อเรื่องเพื่อบันทึกเกม", true);
+      return false;
+    }
+
+    const scene = STORY_DATA[this.currentSceneId] || {};
+    let charThumb = "assets/cover.png";
+    if (scene.char && CHARACTERS[scene.char]) {
+      charThumb = scene.charImg || CHARACTERS[scene.char].image;
+    } else if (this.currentRoute && CHARACTERS[this.currentRoute]) {
+      charThumb = CHARACTERS[this.currentRoute].image;
+    }
+
+    const now = new Date();
+    const timeStr = now.toLocaleDateString('th-TH', { 
+      day: 'numeric', month: 'short', year: 'numeric' 
+    }) + ' ' + now.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' });
+
+    const slotData = {
+      slotId: slotId,
+      savedAt: timeStr,
+      timestamp: Date.now(),
+      sceneId: this.currentSceneId,
+      currentRoute: this.currentRoute,
+      chapterTitle: (scene && scene.chapter) || this.lastChapter || (this.currentRoute ? `รูท ${CHARACTERS[this.currentRoute]?.name || this.currentRoute}` : "บทนำ"),
+      textSnippet: scene.text ? scene.text.slice(0, 60) + (scene.text.length > 60 ? '...' : '') : '',
+      speaker: scene.speaker || (scene.char ? CHARACTERS[scene.char]?.name : ''),
+      charThumb: charThumb,
+      affection: { ...this.affection },
+      historyLog: this.historyLog.slice(-150),
+      playerName: this.playerName,
+      unlockedChapters: [...this.unlockedChapters]
+    };
+
+    try {
+      localStorage.setItem(`otome_slot_${slotId}`, JSON.stringify(slotData));
+      localStorage.setItem('otome_save_state', JSON.stringify(slotData));
+      localStorage.setItem('otome_autosave', JSON.stringify(slotData));
+      this.showToast(`💾 บันทึกความคืบหน้าลงช่องที่ ${slotId} เรียบร้อยแล้ว!`);
+      this.renderSlotsUI();
+      return true;
+    } catch (e) {
+      console.error(e);
+      this.showToast("⚠️ ไม่สามารถบันทึกได้ หน่วยความจำเต็ม", true);
+      return false;
+    }
+  }
+
+  loadFromSlot(slotId) {
+    const raw = localStorage.getItem(`otome_slot_${slotId}`);
+    if (!raw) {
+      this.showToast("⚠️ ไม่พบข้อมูลบันทึกในช่องนี้", true);
+      return false;
+    }
+
+    try {
+      const state = JSON.parse(raw);
+      if (!STORY_DATA[state.sceneId]) {
+        const fallback = state.currentRoute && STORY_DATA[`${state.currentRoute}_branch_start`]
+          ? `${state.currentRoute}_branch_start` : "prologue_modern_1";
+        state.sceneId = fallback;
+        this.showToast("⚠️ เนื้อเรื่องอัปเดตแล้ว เริ่มต่อจากจุดที่ใกล้เคียงที่สุด", true);
+      }
+      this.currentSceneId = state.sceneId;
+      this.currentRoute = state.currentRoute;
+      this.lastChapter = null;
+      this.stageHasChars = false;
+      this.affection = state.affection || { cedric: 0, lucian: 0, leon: 0, kael: 0 };
+      this.historyLog = state.historyLog || [];
+      this.playerName = state.playerName || "เรเนีย";
+      if (Array.isArray(state.unlockedChapters)) {
+        this.unlockedChapters = state.unlockedChapters;
+        localStorage.setItem('otome_unlocked_chapters', JSON.stringify(this.unlockedChapters));
+        this.updateChapterTreeUI();
+      }
+
+      const modalSlots = document.getElementById('modal-slots');
+      if (modalSlots) modalSlots.classList.remove('active');
+      if (this.modalMenu) this.modalMenu.classList.remove('active');
+
+      this.switchScreen('game');
+      this.renderScene(this.currentSceneId);
+      this.showToast(`📂 โหลดบันทึกช่องที่ ${slotId} สำเร็จ!`);
+      return true;
+    } catch (e) {
+      console.error(e);
+      this.showToast("⚠️ เกิดข้อผิดพลาดในการโหลดข้อมูล", true);
+      return false;
+    }
+  }
+
+  deleteSlot(slotId) {
+    localStorage.removeItem(`otome_slot_${slotId}`);
+    this.showToast(`🗑️ ลบข้อมูลในช่องที่ ${slotId} แล้ว`);
+    this.renderSlotsUI();
+  }
+
+  getSlotData(slotId) {
+    const raw = localStorage.getItem(`otome_slot_${slotId}`);
+    if (!raw) return null;
+    try {
+      return JSON.parse(raw);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  getLatestSaveData() {
+    let latest = null;
+    const autoRaw = localStorage.getItem('otome_autosave');
+    if (autoRaw) {
+      try { latest = JSON.parse(autoRaw); } catch(e) {}
+    }
+    for (let i = 1; i <= 3; i++) {
+      const s = this.getSlotData(i);
+      if (s && (!latest || (s.timestamp && s.timestamp > (latest.timestamp || 0)))) {
+        latest = s;
+      }
+    }
+    return latest;
+  }
 }
 
 window.addEventListener('DOMContentLoaded', () => {

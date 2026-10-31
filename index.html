@@ -68,6 +68,9 @@
         </button>
 
         <div class="title-sub-actions">
+          <button id="btn-title-slots" class="btn-subtle">
+            💾 บันทึก/โหลด (Save Slots)
+          </button>
           <button id="btn-title-gallery" class="btn-subtle">
             🏆 หอเกียรติยศฉากจบ
           </button>
@@ -207,6 +210,14 @@
 
                 <!-- Secondary Menu Cards Grid -->
         <div class="hub-sub-grid">
+          <!-- Save & Load Slots Hub Card -->
+          <div class="hub-card sub-card" id="btn-hub-slots">
+            <div class="card-icon">💾</div>
+            <div class="card-desc">
+              <h4>ช่องบันทึก (Save/Load)</h4>
+              <p>จัดการบันทึก 3 ช่อง</p>
+            </div>
+          </div>
           <!-- Letters & Messages -->
           <div class="hub-card sub-card" id="btn-hub-letters">
             <div class="card-icon">💌</div>
@@ -546,6 +557,28 @@
   </div>
 
   <!-- Notification Toast -->
+  
+  <!-- ============================================================== -->
+  <!-- MODAL: MULTI-SLOT SAVE / LOAD (ระบบเซฟ 3 ช่อง)                 -->
+  <!-- ============================================================== -->
+  <div id="modal-slots" class="modal">
+    <div class="modal-content slots-modal-content">
+      <div class="modal-header">
+        <h3 id="slots-modal-title">💾 บันทึกความคืบหน้า (Save & Load)</h3>
+        <button class="modal-close" data-close="modal-slots">✕</button>
+      </div>
+
+      <div class="slots-mode-tabs">
+        <button id="tab-slots-save" class="slots-tab active">💾 บันทึกเกม (Save)</button>
+        <button id="tab-slots-load" class="slots-tab">📂 โหลดเกม (Load)</button>
+      </div>
+
+      <div id="slots-card-list" class="slots-card-list">
+        <!-- Rendered dynamically via renderSlotsUI() -->
+      </div>
+    </div>
+  </div>
+
   <div id="toast-notify" class="toast">❤️ ได้รับคะแนนความผูกพัน!</div>
 
   <script src="audio.js"></script>
