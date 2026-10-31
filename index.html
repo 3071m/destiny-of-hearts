@@ -42,18 +42,120 @@
       <h2 class="game-subtitle">สี่ราชันย์มนตราแห่งเอลีเซียม</h2>
       <p class="tagline">"เมื่อโชคชะตานำพาเจ้าสู่ต่างพิภพ... ชายใดในสี่ราชันย์ที่จะได้ครอบครองดวงใจเจ้า?"</p>
       
-      <div class="title-tap-prompt" id="btn-tap-start">
-        <span class="pulsing-text">✨ แตะที่นี่เพื่อเข้าสู่พระราชวัง (Tap to Enter) ✨</span>
-      </div>
+            <div class="title-menu-container">
+        <button id="btn-title-newgame" class="btn-title-action primary">
+          <span class="btn-title-icon">📖</span>
+          <span class="btn-title-text">
+            <strong>เริ่มเรื่องราวใหม่ (New Game)</strong>
+            <small>เริ่มต้นการเดินทางจากบทนำ</small>
+          </span>
+        </button>
 
-      <div class="title-footer-actions">
-        <button id="btn-title-load" class="btn-subtle">📂 โหลดบันทึก (Load Game)</button>
-        <button id="btn-title-gallery" class="btn-subtle">📖 แกลเลอรีฉากจบ (Gallery)</button>
+        <button id="btn-title-continue" class="btn-title-action continue">
+          <span class="btn-title-icon">▶️</span>
+          <span class="btn-title-text">
+            <strong id="title-continue-head">อ่านต่อจากจุดเดิม (Continue)</strong>
+            <small id="title-continue-sub">ตรวจสอบข้อมูลบันทึก...</small>
+          </span>
+        </button>
+
+        <button id="btn-title-select-route" class="btn-title-action secondary">
+          <span class="btn-title-icon">👑</span>
+          <span class="btn-title-text">
+            <strong>เลือกเส้นทางเจ้าชาย (Select Route)</strong>
+            <small>เลือกเล่นรูทที่ชื่นชอบสู่ฉากจบโดยตรง</small>
+          </span>
+        </button>
+
+        <div class="title-sub-actions">
+          <button id="btn-title-gallery" class="btn-subtle">
+            🏆 หอเกียรติยศฉากจบ
+          </button>
+          <button id="btn-title-lobby" class="btn-subtle">
+            🏰 ห้องโถง & น้ำชา (Lobby)
+          </button>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- ============================================================== -->
+  
+  <!-- ============================================================== -->
+  <!-- MODAL: DIRECT ROUTE SELECTOR (เลือกเส้นทางเจ้าชายโดยตรง)     -->
+  <!-- ============================================================== -->
+  <div id="modal-route-picker" class="modal">
+    <div class="modal-content route-picker-modal">
+      <div class="modal-header">
+        <h3>👑 เลือกเส้นทางหัวใจแห่งเอลีเซียม (Select Prince Route)</h3>
+        <button class="modal-close" data-close="modal-route-picker">✕</button>
+      </div>
+      <p class="modal-desc" style="text-align: center; color: #d0c0e8; font-size: 0.95rem; margin-bottom: 16px;">
+        คุณสามารถเริ่มต้นการเดินทางตั้งแต่บทนำ หรือเลือกเข้าสู่เส้นทางเฉพาะของเจ้าชายที่ต้องการพิชิตใจได้ทันที
+      </p>
+
+      <div class="route-picker-grid">
+        <!-- Cedric Card -->
+        <div class="route-pick-card" data-route="cedric" style="--route-color: #e6c27a;">
+          <div class="route-card-img">
+            <img src="assets/char_cedric_smile.png" alt="Cedric">
+          </div>
+          <div class="route-card-body">
+            <h4>เซดริก (Cedric)</h4>
+            <span class="route-tag">มกุฎราชกุมารแห่งสุริยัน</span>
+            <p class="route-summary">เส้นทางแห่งหน้าที่ ความอบอุ่น และการปกป้องอาณาจักรเคียงข้างราชันย์</p>
+            <button class="btn-primary btn-pick-route" data-route="cedric">เลือกเส้นทางเซดริก ✨</button>
+          </div>
+        </div>
+
+        <!-- Lucian Card -->
+        <div class="route-pick-card" data-route="lucian" style="--route-color: #64b5f6;">
+          <div class="route-card-img">
+            <img src="assets/char_lucian_smile.png" alt="Lucian">
+          </div>
+          <div class="route-card-body">
+            <h4>ลูเชียน (Lucian)</h4>
+            <span class="route-tag">มหาปราชญ์แห่งหอจดหมายเหตุ</span>
+            <p class="route-summary">เส้นทางแห่งมนตราโบราณ ความเงียบสงบ และความลับใต้แสงจันทร์คู่</p>
+            <button class="btn-primary btn-pick-route" data-route="lucian">เลือกเส้นทางลูเชียน 🌙</button>
+          </div>
+        </div>
+
+        <!-- Leon Card -->
+        <div class="route-pick-card" data-route="leon" style="--route-color: #ff8a65;">
+          <div class="route-card-img">
+            <img src="assets/char_leon_smile.png" alt="Leon">
+          </div>
+          <div class="route-card-body">
+            <h4>ลีออน (Leon)</h4>
+            <span class="route-tag">แม่ทัพอัศวินองครักษ์</span>
+            <p class="route-summary">เส้นทางแห่งคมดาบ ความจริงใจอันเร่าร้อน และคำสาบานด้วยชีวิต</p>
+            <button class="btn-primary btn-pick-route" data-route="leon">เลือกเส้นทางลีออน ⚔️</button>
+          </div>
+        </div>
+
+        <!-- Kael Card -->
+        <div class="route-pick-card" data-route="kael" style="--route-color: #ba68c8;">
+          <div class="route-card-img">
+            <img src="assets/char_kael_smile.png" alt="Kael">
+          </div>
+          <div class="route-card-body">
+            <h4>เคล (Kael)</h4>
+            <span class="route-tag">องค์ชายแห่งเงามืด</span>
+            <p class="route-summary">เส้นทางแห่งความมืดมิด ชะตากรรมที่ต้องซ่อนเร้น และความรักที่พร้อมสละชีพ</p>
+            <button class="btn-primary btn-pick-route" data-route="kael">เลือกเส้นทางเคล 🗡️</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 18px;">
+        <button id="btn-pick-prologue" class="btn-subtle" style="padding: 10px 24px;">
+          📖 เล่นเนื้อเรื่องตั้งแต่บทนำ (Prologue - บทที่ 1-3)
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- SCREEN 2: MAIN GAME HUB / LOBBY (หน้าหลักของเกมเหมือนเกมจีบหนุ่มจริง) -->
   <!-- ============================================================== -->
   <div id="screen-lobby" class="screen">
@@ -328,20 +430,21 @@
   </div>
 
   <!-- ============================================================== -->
-  <!-- MODAL: ROUTE EVALUATION (ประเมินชะตากรรมเพื่อเข้ารูท) -->
+    <!-- ============================================================== -->
+  <!-- MODAL: ROUTE EVALUATION & SELECTION (ประเมินและเลือกเส้นทาง) -->
   <!-- ============================================================== -->
   <div id="modal-route-eval" class="modal">
     <div class="modal-content eval-modal">
-      <div class="ornament">✦ ✧ ✦</div>
-      <h3 id="eval-title">ผลการประเมินสายสัมพันธ์</h3>
-      <p class="eval-subtitle">ดวงชะตาได้น้อมรับการตัดสินใจทั้งหมดของคุณ...</p>
+      <div class="ornament">✨ ✦ ✨</div>
+      <h3 id="eval-title">โชคชะตาลิขิตหัวใจ</h3>
+      <p class="eval-subtitle">สงครามแห่งคืนจันทราสีเลือดสงบลง... หัวใจของคุณเรียกร้องหาใคร?</p>
       
       <div class="eval-char-showcase">
         <div class="eval-avatar-wrap">
           <img id="eval-char-img" src="assets/char_cedric.png" alt="Character">
         </div>
-        <h2 id="eval-char-name">เซดริก ฟอน ราเวนครอสต์</h2>
-        <p id="eval-affinity-score" class="eval-score">ระดับความผูกพันสูงสุด: 95 คะแนน</p>
+        <h2 id="eval-char-name">เซดริก วอน เอลีเซียม</h2>
+        <p id="eval-affinity-score" class="eval-score">คะแนนความผูกพันสูงสุด: 95 แต้ม</p>
       </div>
 
       <div class="eval-bars-list">
@@ -367,32 +470,21 @@
         </div>
       </div>
 
-      <button id="btn-enter-route" class="btn-primary" style="margin-top: 20px; width: 100%;">
-        💖 ก้าวเข้าสู่เส้นทางเฉพาะ (Enter Route)
-      </button>
-    </div>
-  </div>
+      <!-- Quick Route Select Buttons -->
+      <div class="eval-route-buttons" style="margin-top: 16px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;">
+        <button class="btn-choice btn-eval-choice" data-route="cedric">👑 รูทเซดริก (สุริยัน)</button>
+        <button class="btn-choice btn-eval-choice" data-route="lucian">🌙 รูทลูเชียน (ปราชญ์มนตรา)</button>
+        <button class="btn-choice btn-eval-choice" data-route="leon">⚔️ รูทลีออน (อัศวินองครักษ์)</button>
+        <button class="btn-choice btn-eval-choice" data-route="kael">🗡️ รูทเคล (เงาจันทรา)</button>
+      </div>
 
-  <!-- ============================================================== -->
-  <!-- SCREEN: ENDING (ฉากจบ) -->
-  <!-- ============================================================== -->
-  <div id="screen-ending" class="screen">
-    <div class="ending-card">
-      <div class="ornament">✨ ⚜️ ✨</div>
-      <h2 id="ending-title">บทอวสานแห่งโชคชะตา</h2>
-      <h3 id="ending-type">❤️ Happy Romantic Ending</h3>
-      <div class="ending-char-photo">
-        <img id="ending-char-img" src="assets/cover.png" alt="Ending">
-      </div>
-      <p id="ending-desc" class="ending-desc">...</p>
-      <div class="ending-stats">
-        <span>ระดับความพึงพอใจของหัวใจ:</span>
-        <strong id="ending-final-score">100%</strong>
-      </div>
-      <div class="ending-actions">
-        <button id="btn-replay-route" class="btn-primary">🔄 เล่นใหม่อีกครั้ง</button>
-        <button id="btn-ending-lobby" class="btn-secondary">👑 กลับสู่หน้าหลักของเกม</button>
-      </div>
+      <button id="btn-enter-route" class="btn-primary" style="margin-top: 14px; width: 100%;">
+        💖 เข้าสู่เส้นทางที่หัวใจเรียกร้อง (Enter Route)
+      </button>
+
+      <button id="btn-eval-independent" class="btn-subtle" style="margin-top: 8px; width: 100%; font-size: 0.85rem;">
+        🌸 เลือกเส้นทางอิสระของตัวเอง (Independent Route)
+      </button>
     </div>
   </div>
 

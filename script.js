@@ -177,29 +177,121 @@ class OtomeGame {
       window.audioManager.toggleSfx();
     });
 
-    // Title Screen Click to Enter Game Lobby
-    document.getElementById('btn-tap-start').addEventListener('click', () => {
-      window.audioManager.init();
-      window.audioManager.playHeartUp();
-      this.switchScreen('lobby');
+        // Direct Visual Novel Title Menu Actions
+    const btnNewGame = document.getElementById('btn-title-newgame');
+    if (btnNewGame) {
+      btnNewGame.addEventListener('click', () => {
+        window.audioManager.init();
+        window.audioManager.playChoice();
+        this.startStory("prologue_modern_1");
+      });
+    }
+
+    const btnContinue = document.getElementById('btn-title-continue');
+    if (btnContinue) {
+      btnContinue.addEventListener('click', () => {
+        window.audioManager.init();
+        window.audioManager.playChoice();
+        const loaded = this.loadAutoSave() || this.loadProgress();
+        if (!loaded) {
+          this.showToast("ยังไม่มีข้อมูลบันทึก เริ่มเรื่องราวใหม่กันเลย!", false);
+          this.startStory("prologue_modern_1");
+        }
+      });
+    }
+
+    const btnSelectRoute = document.getElementById('btn-title-select-route');
+    if (btnSelectRoute) {
+      btnSelectRoute.addEventListener('click', () => {
+        window.audioManager.playChoice();
+        const modal = document.getElementById('modal-route-picker');
+        if (modal) modal.classList.add('active');
+      });
+    }
+
+    const btnTitleLobby = document.getElementById('btn-title-lobby');
+    if (btnTitleLobby) {
+      btnTitleLobby.addEventListener('click', () => {
+        window.audioManager.playChoice();
+        this.switchScreen('lobby');
+      });
+    }
+
+    const btnTitleGallery = document.getElementById('btn-title-gallery');
+    if (btnTitleGallery) {
+      btnTitleGallery.addEventListener('click', () => {
+        window.audioManager.playChoice();
+        this.updateGalleryUI();
+        this.switchScreen('gallery');
+      });
+    }
+
+    // Direct Route Selector Modal Actions
+    document.querySelectorAll('.btn-pick-route').forEach(btn => {
+      btn.addEventListener('click', () => {
+        window.audioManager.playHeartUp();
+        const route = btn.dataset.route;
+        document.getElementById('modal-route-picker')?.classList.remove('active');
+        this.startDirectRoute(route);
+      });
     });
 
-    // Title Footer Actions
-    document.getElementById('btn-title-load').addEventListener('click', (e) => {
-      e.stopPropagation();
-      window.audioManager.playChoice();
-      const loaded = this.loadProgress();
-      if (!loaded) {
-        this.showToast("⚠️ ไม่พบข้อมูลบันทึก");
-      }
+    const btnPickPrologue = document.getElementById('btn-pick-prologue');
+    if (btnPickPrologue) {
+      btnPickPrologue.addEventListener('click', () => {
+        window.audioManager.playChoice();
+        document.getElementById('modal-route-picker')?.classList.remove('active');
+        this.startStory("prologue_modern_1");
+      });
+    }
+
+    // Route Evaluation interactive choices
+    document.querySelectorAll('.btn-eval-choice').forEach(btn => {
+      btn.addEventListener('click', () => {
+        window.audioManager.playHeartUp();
+        const chosenRoute = btn.dataset.route;
+        document.getElementById('modal-route-eval')?.classList.remove('active');
+        this.currentRoute = chosenRoute;
+        this.unlockChapter(chosenRoute);
+        this.renderScene(`${chosenRoute}_branch_start`);
+      });
     });
 
-    document.getElementById('btn-title-gallery').addEventListener('click', (e) => {
-      e.stopPropagation();
-      window.audioManager.playChoice();
-      this.updateGalleryUI();
-      this.switchScreen('gallery');
-    });
+    const btnEvalIndependent = document.getElementById('btn-eval-independent');
+    if (btnEvalIndependent) {
+      btnEvalIndependent.addEventListener('click', () => {
+        window.audioManager.playChoice();
+        document.getElementById('modal-route-eval')?.classList.remove('active');
+        this.renderScene("common_independent_ending");
+      });
+    }
+
+    // Ending Screen actions
+    const btnEndingOther = document.getElementById('btn-ending-other-route');
+    if (btnEndingOther) {
+      btnEndingOther.addEventListener('click', () => {
+        window.audioManager.playChoice();
+        document.getElementById('modal-route-picker')?.classList.add('active');
+      });
+    }
+
+    const btnEndingGallery = document.getElementById('btn-ending-gallery');
+    if (btnEndingGallery) {
+      btnEndingGallery.addEventListener('click', () => {
+        window.audioManager.playChoice();
+        this.updateGalleryUI();
+        this.switchScreen('gallery');
+      });
+    }
+
+    const btnEndingTitle = document.getElementById('btn-ending-lobby');
+    if (btnEndingTitle) {
+      btnEndingTitle.addEventListener('click', () => {
+        window.audioManager.playChoice();
+        this.updateContinueButtonUI();
+        this.switchScreen('title');
+      });
+    }
 
     // Lobby Prince Switcher
     document.querySelectorAll('.prince-tab').forEach(tab => {
@@ -579,6 +671,9 @@ class OtomeGame {
       if (window.audioManager) {
         window.audioManager.setTheme('title');
       }
+      if (screenName === 'title') {
+        this.updateContinueButtonUI();
+      }
     }
   }
 
@@ -659,6 +754,7 @@ class OtomeGame {
     }
     this.currentSceneId = sceneId;
     this.updateBgmForScene(sceneId, scene);
+    this.autoSaveProgress(scene);
 
     // Auto-unlock chapters when reached through gameplay
     if (sceneId === "ch1_start") this.unlockChapter("ch1");
@@ -1079,7 +1175,7 @@ class OtomeGame {
     this.logListEl.scrollTop = this.logListEl.scrollHeight;
   }
 
-  triggerEnding(endingData) {
+    triggerEnding(endingData) {
     const key = `${endingData.char || 'common'}_${endingData.type}`;
     if (!this.unlockedEndings.includes(key)) {
       this.unlockedEndings.push(key);
@@ -1091,23 +1187,55 @@ class OtomeGame {
     const descEl = document.getElementById('ending-desc');
     const imgEl = document.getElementById('ending-char-img');
     const scoreEl = document.getElementById('ending-final-score');
+    const badgeEl = document.getElementById('ending-badge');
+    const honorTitleEl = document.getElementById('ending-title-text');
 
-    titleEl.textContent = endingData.title;
-    typeEl.textContent = `❤️ ${endingData.type}`;
-    descEl.textContent = endingData.desc;
-    
+    if (titleEl) titleEl.textContent = endingData.title;
+    if (typeEl) typeEl.textContent = endingData.type;
+    if (descEl) descEl.textContent = endingData.desc;
+
+    // Badges & Honorary Titles
+    const isTrue = endingData.type.includes('True') || endingData.type.includes('แท้');
+    if (badgeEl) {
+      if (isTrue) {
+        badgeEl.textContent = '👑 TRUE ROMANCE ENDING (บทอวสานแห่งรักแท้)';
+        badgeEl.style.background = 'linear-gradient(135deg, #e6c27a, #ff4d6d)';
+      } else if (endingData.char === 'common') {
+        badgeEl.textContent = '🕊️ INDEPENDENT MAIDEN ENDING (บทอวสานอิสตรีผู้เป็นเอก)';
+        badgeEl.style.background = 'linear-gradient(135deg, #64ffda, #1de9b6)';
+      } else {
+        badgeEl.textContent = '🌸 NORMAL COMPANION ENDING (บทอวสานแห่งมิตรภาพ)';
+        badgeEl.style.background = 'linear-gradient(135deg, #ba68c8, #ab47bc)';
+      }
+    }
+
+    const titles = {
+      cedric: isTrue ? 'มกุฎราชินีคู่บัลลังก์สุริยัน (Sun Queen)' : 'สหายคู่ใจแห่งราชันย์สุริยัน',
+      lucian: isTrue ? 'มหาปราชญ์หญิงคู่บัลลังก์มนตรา (Archmage Consort)' : 'ปราชญ์ผู้ร่วมค้นคว้าแห่งหอจดหมายเหตุ',
+      leon: isTrue ? 'คู่ชีวิตแห่งแม่ทัพอัศวินองครักษ์ (Knight Champion\'s Heart)' : 'สหายศึกผู้ร่วมสาบานแห่งคมดาบ',
+      kael: isTrue ? 'แสงสว่างหนึ่งเดียวแห่งเงามืด (Moonlit Shadow Consort)' : 'ผู้กุมความลับหนึ่งเดียวขององค์ชายเงา',
+      common: 'อิสตรีผู้กำหนดโชคชะตาด้วยตนเอง (Free-Spirited Heroine)'
+    };
+
+    if (honorTitleEl) {
+      honorTitleEl.textContent = titles[endingData.char] || 'ยอดดวงใจแห่งเอลีเซียม';
+    }
+
     if (endingData.char && CHARACTERS[endingData.char] && CHARACTERS[endingData.char].image) {
-      imgEl.src = CHARACTERS[endingData.char].image;
+      imgEl.src = isTrue ? CHARACTERS[endingData.char].image.replace('.png', '_smile.png') : CHARACTERS[endingData.char].image;
     } else {
       imgEl.src = "assets/cover.png";
     }
-    
+
     const finalScore = endingData.char && this.affection[endingData.char] !== undefined
       ? this.affection[endingData.char]
       : Math.max(...Object.values(this.affection));
-    scoreEl.textContent = `${finalScore}%`;
+    if (scoreEl) scoreEl.textContent = `${finalScore}%`;
 
-    window.audioManager.playHeartUp();
+    if (window.audioManager) {
+      window.audioManager.playHeartUp();
+      window.audioManager.setTheme(isTrue ? 'romance' : 'daily');
+    }
     this.switchScreen('ending');
   }
 
@@ -1204,6 +1332,93 @@ class OtomeGame {
       container.appendChild(dot);
     }
   }
+
+
+  // Direct Prince Route Launch (for standalone one-sitting playthrough)
+  startDirectRoute(princeKey) {
+    if (!CHARACTERS[princeKey]) princeKey = 'cedric';
+    this.currentRoute = princeKey;
+    this.affection = { cedric: 20, lucian: 20, leon: 20, kael: 20 };
+    this.affection[princeKey] = 65; // Prime affection for chosen prince route
+    this.lastChapter = null;
+    this.stageHasChars = false;
+    this.historyLog = [];
+    this.unlockChapter(princeKey);
+    this.switchScreen('game');
+    this.renderScene(`${princeKey}_branch_start`);
+    this.showToast(`👑 เข้าสู่เส้นทางของ ${CHARACTERS[princeKey].name} แล้ว!`);
+  }
+
+  // Real-time Auto-Save during story reading
+  autoSaveProgress(scene) {
+    if (!this.currentSceneId || this.currentSceneId === 'title') return;
+    try {
+      const data = {
+        sceneId: this.currentSceneId,
+        currentRoute: this.currentRoute,
+        affection: this.affection,
+        historyLog: this.historyLog.slice(-150),
+        playerName: this.playerName,
+        unlockedChapters: this.unlockedChapters,
+        chapter: (scene && scene.chapter) || 'กำลังเดินทาง',
+        timestamp: Date.now()
+      };
+      localStorage.setItem('otome_autosave', JSON.stringify(data));
+    } catch (e) {
+      console.warn("AutoSave failed:", e);
+    }
+  }
+
+  loadAutoSave() {
+    const raw = localStorage.getItem('otome_autosave');
+    if (!raw) return false;
+    try {
+      const data = JSON.parse(raw);
+      if (!STORY_DATA[data.sceneId]) return false;
+      this.currentSceneId = data.sceneId;
+      this.currentRoute = data.currentRoute;
+      this.affection = data.affection || { cedric: 0, lucian: 0, leon: 0, kael: 0 };
+      this.historyLog = data.historyLog || [];
+      this.playerName = data.playerName || "เรเนีย";
+      if (Array.isArray(data.unlockedChapters)) {
+        this.unlockedChapters = data.unlockedChapters;
+      }
+      this.switchScreen('game');
+      this.renderScene(this.currentSceneId);
+      this.showToast(`▶️ อ่านต่อ: ${data.chapter || 'จุดล่าสุด'}`);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  updateContinueButtonUI() {
+    const headEl = document.getElementById('title-continue-head');
+    const subEl = document.getElementById('title-continue-sub');
+    const btnContinue = document.getElementById('btn-title-continue');
+    const raw = localStorage.getItem('otome_autosave') || localStorage.getItem('otome_save_state');
+
+    if (!raw) {
+      if (headEl) headEl.textContent = 'อ่านต่อจากจุดเดิม (Continue)';
+      if (subEl) subEl.textContent = 'ยังไม่มีข้อมูลบันทึก';
+      if (btnContinue) {
+        btnContinue.style.opacity = '0.75';
+      }
+      return;
+    }
+
+    try {
+      const data = JSON.parse(raw);
+      if (headEl) headEl.textContent = `อ่านต่อ: ${data.chapter || 'จุดล่าสุด'}`;
+      const timeStr = data.timestamp ? new Date(data.timestamp).toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }) : 'บันทึกล่าสุด';
+      if (subEl) subEl.textContent = `แตะเพื่ออ่านต่อทันที (${timeStr})`;
+      if (btnContinue) {
+        btnContinue.style.opacity = '1';
+        btnContinue.classList.add('has-save');
+      }
+    } catch (e) {}
+  }
+
 }
 
 window.addEventListener('DOMContentLoaded', () => {
